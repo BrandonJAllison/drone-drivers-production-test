@@ -26,7 +26,7 @@ const Login = () => {
     console.table({ email, password });
     try {
       setLoading(true);
-      const { data } = await axios.post(`http://localhost:3001/api/login`, {
+      const { data } = await axios.post(`https://sea-turtle-app-l7rbe.ondigitalocean.app/api/login`, {
         email,
         password,
       });

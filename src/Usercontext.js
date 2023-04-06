@@ -50,7 +50,7 @@ const UserProvider = ({ children }) => {
       if (res.status === 401 && res.config && !res.config.__isRetryRequest) {
         return new Promise((resolve, reject) => {
           axios
-            .get("localhost:3001/api/logout")
+            .get("https://sea-turtle-app-l7rbe.ondigitalocean.app/api/logout")
             .then((data) => {
               console.log("/401 error > logout");
               dispatch({ type: "LOGOUT" });

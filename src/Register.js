@@ -14,7 +14,7 @@ const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post('http://localhost:3001/api/signup', { email, password, firstName, lastName, username });
+      await axios.post('https://sea-turtle-app-l7rbe.ondigitalocean.app/api/signup', { email, password, firstName, lastName, username });
       console.log('User signed up successfully.');
       navigate('/');
     } catch (err) {
