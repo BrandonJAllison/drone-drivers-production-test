@@ -13,9 +13,12 @@ import Test from '../src/Testing'
 import Privacy from '../src/PrivacyPolicy'
 import UserProvider from "./Usercontext";
 
+
 const App = () => {
 
   const [user, setUser] = useState(null);
+
+  
 
   return (
     <BrowserRouter>

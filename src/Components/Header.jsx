@@ -2,19 +2,26 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import Logo from './logo-txt-sm.png';
 import { useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../Usercontext';
 
 const Header = () => {
   const navigate = useNavigate();
   const { state, dispatch } = useContext(UserContext);
   const { user } = state;
+  const [showPurchaseButton, setShowPurchaseButton] = useState(true);
 
   const handleLogout = () => {
     window.localStorage.removeItem('user');
     dispatch({ type: 'LOGOUT' }); // Dispatch "LOGOUT" action
     navigate('/login');
   };
+
+  // useEffect(() => {
+  //   // Check if the user has purchased the course
+  //   const hasPurchasedCourse = // Logic to check if the user has purchased the course
+  //   setShowPurchaseButton(!hasPurchasedCourse); // Hide the Purchase Course button if the user has purchased the course
+  // }, [user]);
 
   return (
     <header className="header">
@@ -53,6 +60,11 @@ const Header = () => {
               <button className="header__dropdown__button" onClick={handleLogout}>Logout</button>
             </div>
           </div>
+        )}
+        {showPurchaseButton && (
+          <Link to="/purchase-course" className="header__link header__link--purchase" style={{ backgroundColor: '#006193' }}>
+            Purchase Course
+          </Link>
         )}
       </div>
     </header>

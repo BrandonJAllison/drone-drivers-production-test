@@ -31,15 +31,9 @@ const Login = () => {
         password,
       });
       console.log("LOGIN RESPONSE", data);
-      // dispatch({
-      //   type: "LOGIN",
-      //   payload: data,
-      // });
-      // save in local storage
       window.localStorage.setItem("user", JSON.stringify(data));
-      // redirect
+      dispatch({ type: "LOGIN", payload: data }); // Add this line
       navigate("/");
-      // setLoading(false);
     } catch (err) {
       toast.error(err.response.data);
       setLoading(false);
