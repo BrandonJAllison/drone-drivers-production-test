@@ -1,8 +1,9 @@
 import Test from '../src/Components/practiceTests/testComponent'
+import './Testing.css'
 
 const Testing = () => {
   return (
-    <div>
+    <div className="testing-container">
       <Test />
     </div>
   );

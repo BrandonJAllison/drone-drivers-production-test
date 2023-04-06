@@ -8,7 +8,7 @@
   },
   {
     "question": "The term Angle of Attack (AOA) is defined as the angle between (reference Figure 1): ",
-    "link": "",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+1+Lift+Diagram.png",
     "category":"Performance",
     "answers": ["Relative wind and the leading edge", "Center of Gravity and the longitudinal axis", "Chord line of the wing and the relative wind"],
     "correctAnswerIndex": 2
