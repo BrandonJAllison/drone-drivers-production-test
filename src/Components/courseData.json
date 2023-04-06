@@ -123,6 +123,108 @@
             "answer": 1
           }
         ]
+      },
+      {
+        "title": "Procedures Performance",
+        "subChapters": [
+          {
+            "title": "7.0 Procedures Performance",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/7.0+Procedures+_+Performance+v1.mp4",
+            "description": ""
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What are props in React?",
+            "options": ["A way to style components", "A way to pass data to components", "A way to add event listeners"],
+            "answer": 1
+          }
+        ]
+      },
+      {
+        "title": "Emergency Procedures",
+        "subChapters": [
+          {
+            "title": "8.0 Emergency Procedures",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/8.0+Emergency+Procedures+v1.mp4",
+            "description": ""
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What are props in React?",
+            "options": ["A way to style components", "A way to pass data to components", "A way to add event listeners"],
+            "answer": 1
+          }
+        ]
+      },
+      {
+        "title": "Radio Communications",
+        "subChapters": [
+          {
+            "title": "9.0 Radio Communications",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/9.0+Radio+Communications+v1.mp4",
+            "description": ""
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What are props in React?",
+            "options": ["A way to style components", "A way to pass data to components", "A way to add event listeners"],
+            "answer": 1
+          }
+        ]
+      },
+      {
+        "title": "Psycological factors",
+        "subChapters": [
+          {
+            "title": "10. Psycological Factors",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/10.+Physiological+Factors+v1.mp4",
+            "description": ""
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What are props in React?",
+            "options": ["A way to style components", "A way to pass data to components", "A way to add event listeners"],
+            "answer": 1
+          }
+        ]
+      },
+      {
+        "title": "Night Ops",
+        "subChapters": [
+          {
+            "title": "11. Night Ops",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/11.+Night+Ops.mp4",
+            "description": ""
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What are props in React?",
+            "options": ["A way to style components", "A way to pass data to components", "A way to add event listeners"],
+            "answer": 1
+          }
+        ]
+      },
+      {
+        "title": "Aero Decision Making",
+        "subChapters": [
+          {
+            "title": "12. Aero Decision Making",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/3.1+Airspace+-+Overview.mp4",
+            "description": ""
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What are props in React?",
+            "options": ["A way to style components", "A way to pass data to components", "A way to add event listeners"],
+            "answer": 1
+          }
+        ]
       }
     ]
   }
