@@ -1,0 +1,128 @@
+{
+    "courseTitle": "FAA PART 107",
+    "description": "",
+    "chapters": [
+      {
+        "title": "Introduction",
+        "subChapters": [
+          {
+            "title": "Welcome to the Course",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/0.1+Inside+Intro+v1.mp4",
+            "description": ""
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What is React?",
+            "options": ["A library", "A framework", "A language"],
+            "answer": 0
+          }
+        ]
+      },
+      {
+        "title": "Regulations",
+        "subChapters": [
+          {
+            "title": "1.1 Regulations Introduction",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/1.1+Regulations+Intro+v2.mp4",
+            "description": ""
+          },
+          {
+            "title": "1.2 Regulations",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/1.2+Regulations+v1.mp4",
+            "description": ""
+          },
+          {
+            "title": "1.3 Regulations",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/1.3_Regulations_v1.mp4",
+            "description": ""
+          }
+        ],
+        "quiz": [
+          {
+            "question": " According to 14 CFR part 107, how may a remote pilot operate an unmanned aircraftin Class C airspace?",
+            "options": ["The remote pilot must contact the Air Traffic Control (ATC) facility after launchingthe unmanned aircraft.", "The remote pilot must monitor the Air Traffic Control (ATC) frequency from launch to recovery.", "The remote pilot must have prior authorization from the Air Traffic Control (ATC) facility having jurisdiction over that airspace."],
+            "answer": 3
+          }
+        ]
+      },
+      {
+        "title": "Airspace",
+        "subChapters": [
+          {
+            "title": "3.1 Airspace Overview",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/3.1+Airspace+-+Overview.mp4",
+            "description": ""
+          },
+          {
+            "title": "3.2 Airspace Special Use",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/3.2+Airspace+-+Special+Use.mp4",
+            "description": ""
+          },
+          {
+            "title": "3.3 Airspace - Other",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/3.3+Airspace+-+Other.mp4",
+            "description": ""
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What are props in React?",
+            "options": ["A way to style components", "A way to pass data to components", "A way to add event listeners"],
+            "answer": 1
+          }
+        ]
+      },
+      {
+        "title": "Airspace Operations",
+        "subChapters": [
+          {
+            "title": "4.0 Airspace Operations",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/4.0+Airport+Operations.mp4",
+            "description": ""
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What are props in React?",
+            "options": ["A way to style components", "A way to pass data to components", "A way to add event listeners"],
+            "answer": 1
+          }
+        ]
+      },
+      {
+        "title": "Airspace Data",
+        "subChapters": [
+          {
+            "title": "5.0 Sources of Airport Data",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/5.0+Sources+of+Airport+Data.mp4",
+            "description": ""
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What are props in React?",
+            "options": ["A way to style components", "A way to pass data to components", "A way to add event listeners"],
+            "answer": 1
+          }
+        ]
+      },
+      {
+        "title": "Weather",
+        "subChapters": [
+          {
+            "title": "6.0 Weather",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/6.0+Weather.mp4",
+            "description": ""
+          }
+        ],
+        "quiz": [
+          {
+            "question": "What are props in React?",
+            "options": ["A way to style components", "A way to pass data to components", "A way to add event listeners"],
+            "answer": 1
+          }
+        ]
+      }
+    ]
+  }

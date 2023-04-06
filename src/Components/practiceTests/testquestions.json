@@ -1,0 +1,58 @@
+[  
+  {
+    "question": "To ensure that Unmanned Aircraft Center-of-Gravity (CG) limits are not exceeded.  Follow the a/c loading instructions specified in:?",
+    "link":"",
+    "category":"Performance",
+    "answers": ["Pilot Op Handbook & UAS Flight Manual", "On the FAA.gov website", "Chart Supplement"],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "The term Angle of Attack (AOA) is defined as the angle between (reference Figure 1): ",
+    "link": "",
+    "category":"Performance",
+    "answers": ["Relative wind and the leading edge", "Center of Gravity and the longitudinal axis", "Chord line of the wing and the relative wind"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "When operating an unmanned aircraft, the remote pilot should be aware that the load factor on the wings may increase anytime:",
+    "link":"",
+    "category":"Performance",
+    "answers": ["The airplane is in straight and level flight", "The airplane is subjected to maneuvers other than straight and level flight.", "There is additional fuel"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question":"If an unmanned airplane weighs 33 pounds, what approximate weight would the airplane be required to support while in a 30deg banked turn while still maintaining altitude? Reference the Angle of Bank / Load Factor Table (Figure 2):",
+    "link":"",
+    "category":"Performance",
+    "answers":["38 lbs", "33 lbs","41 lbs"],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question":"A stall occurs when the laminar (or smooth) airflow over the unmanned airplane's wing is disrupted and the lift degrades rapidly.  This is caused when the wing:",
+    "link":"",
+    "category":"Performance",
+    "answers":["Center of Gravity", "Exceeds its critical angle of attack", "Chord line and the relative wind"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question":"During an approach to a stall, an increased load factor will cause the aircraft to:",
+    "link":"",
+    "category":"",
+    "answers":["Stall at the same airspeed", "Stall at a higher airspeed","Stall at a lower airspeed" ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question":"An unmanned aircraft is loaded with the Center-of-Gravity (CG)  located aft of the aft CG limit.  One undesirable flight characteristic a remote pilot may experience with this airplane would be:",
+    "link":"",
+    "category":"Performance",
+    "answers":["Difficulty maintaining straight and level flight","Difficulty landing", "Difficulty in recovering from a stalled condition"],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question":"The Angle of Attack at which an unmanned aircraft wing stalls will:",
+    "link":"",
+    "category":"Performance",
+    "answers":["Remain the same regardless of gross weight.","Is defined as the angle between the chord line and relative wind, it is not affected by weight at all.", "Increase with an increase in gross weight."],
+    "correctAnswerIndex": 0
+  }
+]
