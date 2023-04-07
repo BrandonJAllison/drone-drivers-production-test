@@ -43,8 +43,8 @@ const CheckoutPage = () => {
   return (
     <div className="checkout-container">
       <div className="checkout-box">
-        <h1>Get the Drone Drivers Course</h1>
-        <p>You will be redirected to a Stripe page to process your payment.</p>
+        <h3>Get the Drone Drivers Course Today!</h3>
+        <p>You will be redirected to a Stripe page to process payment. Once successfully checked out you will be brough back to the drone driver app and your course material and practice tests will be unlocked.</p>
         <form onSubmit={handleSubmit}>
           <p>Amount: $25.00</p>
           <button type="submit" disabled={!stripe || loading}>
