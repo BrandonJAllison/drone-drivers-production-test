@@ -54,5 +54,12 @@
     "category":"Performance",
     "answers":["Remain the same regardless of gross weight.","Is defined as the angle between the chord line and relative wind, it is not affected by weight at all.", "Increase with an increase in gross weight."],
     "correctAnswerIndex": 0
+  },
+  {
+    "question":"What effect does humidity have on performance?",
+    "link":"",
+    "category":"Performance",
+    "answers":["Humidity increases performance.","Humidity decreases performance.", "Humidity has no effect on performance."],
+    "correctAnswerIndex": 1
   }
 ]
