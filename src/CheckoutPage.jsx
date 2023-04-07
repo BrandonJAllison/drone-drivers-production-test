@@ -43,7 +43,8 @@ const CheckoutPage = () => {
   return (
     <div className="checkout-container">
       <div className="checkout-box">
-        <h1>Stripe Checkout</h1>
+        <h1>Get the Drone Drivers Course</h1>
+        <p>You will be redirected to a Stripe page to process your payment.</p>
         <form onSubmit={handleSubmit}>
           <p>Amount: $25.00</p>
           <button type="submit" disabled={!stripe || loading}>
