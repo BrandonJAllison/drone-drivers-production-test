@@ -62,7 +62,7 @@ const Header = () => {
           </div>
         )}
         {showPurchaseButton && (
-          <Link to="/purchase-course" className="header__link header__link--purchase" style={{ backgroundColor: '#006193' }}>
+          <Link to="/checkout" className="header__link header__link--purchase" style={{ backgroundColor: '#006193' }}>
             Purchase Course
           </Link>
         )}
