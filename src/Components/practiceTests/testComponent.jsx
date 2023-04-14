@@ -202,18 +202,26 @@ return (
       <p>Time remaining: {formatTime(timer)}</p>
     </div>
     <div className="question-list">
-        {questions.map((_, index) => (
-          <button
-            key={index}
-            className={`question-number ${
-              currentQuestion === index ? "current-question" : ""
-            } ${selectedOptions[index] ? "answered-question" : ""}`}
-            onClick={() => handleQuestionClick(index)}
-          >
-            {index + 1}
-          </button>
-        ))}
-    </div>
+  {questions.map((_, index) => (
+    <button
+      key={index}
+      className={`question-number ${
+        selectedOptions[index] !== "" ? "answered" : ""
+      } ${
+        currentQuestion === index ? "current-question" : ""
+      }`}
+      onClick={() => handleQuestionClick(index)}
+    >
+      <span
+        className={`question-number-text ${
+          selectedOptions[index] !== "" ? "answered" : ""
+        }`}
+      >
+        {index + 1}
+      </span>
+    </button>
+  ))}
+</div>
     <div className="question-container">
       <h2>{question.question}</h2>
       {question.link && (

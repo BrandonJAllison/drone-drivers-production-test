@@ -27,7 +27,7 @@ const Home = () => {
         </h1>
         <div className="whatis-section">
           <div className="whatis-img">
-            <ReactPlayer url={'https://dronedriver-development-codebase.s3.amazonaws.com/video/teaser.mp4'} playing controls />
+            <ReactPlayer url={'https://dronedriver-development-codebase.s3.amazonaws.com/video/teaser.mp4'}  controls />
           </div>
           <div className="whatis-text">
           Welcome to the most comprehensive FAA Part 107 test prep course on the market! As the demand for commercial drone pilots continues to grow, it's more important than ever to have a solid understanding of the regulations and requirements set forth by the Federal Aviation Administration (FAA). That's where we come in.

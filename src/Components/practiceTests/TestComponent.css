@@ -107,3 +107,11 @@
     margin-right: 8px;
     width:10px;
   }
+
+  .question-number.answered {
+    border-color: green;
+  }
+
+  
+
+  
