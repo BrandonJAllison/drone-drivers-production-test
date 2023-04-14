@@ -3,6 +3,7 @@ import questionsData from "./testquestions.json";
 import "./TestComponent.css";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
+import domtoimage from 'dom-to-image';
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -11,8 +12,27 @@ function shuffleArray(array) {
   }
 }
 
+// const applyStylesToResultContent = () => {
+//   const resultDiv = document.getElementById("result-container");
+  
+//   // Add padding and background color
+//   resultDiv.style.padding = "20px";
+//   resultDiv.style.backgroundColor = "#ffffff";
+  
+//   // Style the individual question containers
+//   const questionContainers = resultDiv.querySelectorAll(".result-question");
+//   questionContainers.forEach((questionContainer) => {
+//     questionContainer.style.padding = "10px";
+//     questionContainer.style.marginBottom = "20px";
+//     questionContainer.style.border = "1px solid #cccccc";
+//     questionContainer.style.borderRadius = "5px";
+//   });
+
+//   // Add any other desired styles here
+// };
+
 const generatePDF = async () => {
-  const resultDiv = document.getElementById("result-container");
+  const resultDiv = document.querySelector(".result-container");
 
   const canvas = await html2canvas(resultDiv);
   const imgData = canvas.toDataURL("image/png");
@@ -30,6 +50,8 @@ const generatePDF = async () => {
   window.open(pdfURL, "_blank");
 };
 
+
+
 const TestComponent = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -43,8 +65,8 @@ const TestComponent = () => {
   useEffect(() => {
     const shuffledQuestions = [...questionsData];
     shuffleArray(shuffledQuestions);
-    setQuestions(shuffledQuestions.slice(0, 7));
-    setSelectedOptions(new Array(7).fill(""));
+    setQuestions(shuffledQuestions.slice(0, 15));
+    setSelectedOptions(new Array(15).fill(""));
     setStartTime(new Date());
   }, []);
 
@@ -59,6 +81,12 @@ const TestComponent = () => {
     }
   }, [timer, showResults]);
 
+  useEffect(() => {
+    if (showResults) {
+      generatePDF();
+    }
+  }, [showResults]);
+
   const formatTime = (seconds) => {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
@@ -72,10 +100,12 @@ const TestComponent = () => {
 
   const question = questions[currentQuestion];
 
+
   const handleOptionChange = (event) => {
     const target = event.target;
     const updatedOptions = [...selectedOptions];
-    updatedOptions[currentQuestion] = target.value;
+    const selectedIndex = parseInt(target.value);
+    updatedOptions[currentQuestion] = selectedIndex;
     setSelectedOptions(updatedOptions);
   
     const question = questions[currentQuestion];
@@ -91,6 +121,7 @@ const TestComponent = () => {
       }
     });
   };
+  
 
   const handleNext = () => {
     setCurrentQuestion(currentQuestion + 1);
@@ -108,8 +139,7 @@ const TestComponent = () => {
     // Save results
     const correct = questions.reduce(
       (total, question, index) =>
-        question.answers[selectedOptions[index]] ===
-        question.answers[question.correctAnswerIndex]
+      parseInt(selectedOptions[index]) === question.correctAnswerIndex
           ? total + 1
           : total,
       0
@@ -117,12 +147,7 @@ const TestComponent = () => {
     setScore({ correct, incorrect: questions.length - correct });
     setShowResults(true);
     setEndTime(new Date());
-  
-    // Generate the PDF
-    generatePDF(questions, selectedOptions).then((pdf) => {
-      const pdfDataUrl = pdf.output("datauristring");
-      window.open(pdfDataUrl, "_blank");
-    });
+ 
   };
 
   if (showResults) {
@@ -130,7 +155,7 @@ const TestComponent = () => {
   
     return (
       <div className="quiz-container">
-        <div className="result-container">
+        <div className="result-container" id="result-container" >
           <h2>Results</h2>
           <p>Correct: {score.correct}</p>
           <p>Incorrect: {score.incorrect}</p>
@@ -199,19 +224,19 @@ return (
         </p>
       )}
       <div className="options-container">
-          {question.answers.map((answer, index) => (
-            <div key={index} className="option">
-              <label>
-                <input
-                  type="radio"
-                  value={answer}
-                  checked={selectedOptions[currentQuestion] === answer}
-                  onChange={handleOptionChange}
-                />
-                <span className="option-text">{answer}</span>
-              </label>
-            </div>
-          ))}
+      {question.answers.map((answer, index) => (
+  <div key={index} className="option">
+    <label>
+      <input
+        type="radio"
+        value={index}
+        checked={selectedOptions[currentQuestion] === index}
+        onChange={handleOptionChange}
+      />
+      <span className="option-text">{answer}</span>
+    </label>
+  </div>
+))}
       </div>
       <div className="button-container">
         {currentQuestion > 0 && (

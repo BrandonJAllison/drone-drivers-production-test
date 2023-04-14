@@ -57,6 +57,9 @@ const Header = () => {
               <Link to="/course" className="header__dropdown__item">
                 Course
               </Link>
+              <Link to="/practice-test" className="header__dropdown__item">
+                Testing
+              </Link>
               <button className="header__dropdown__button" onClick={handleLogout}>Logout</button>
             </div>
           </div>
