@@ -87,7 +87,7 @@ const Course = () => {
               </div>
               <div className="description">{currentSubCourse.description}</div>
               <div className="courseWrapper">
-                {showQuiz ? (
+                {/* {showQuiz ? (
                   <div className="quizContainer">
                     <h3>{currentCourse.quiz[0].question}</h3>
                     {currentCourse.quiz[0].options.map((option, index) => (
@@ -112,7 +112,7 @@ const Course = () => {
                       Take Quiz
                     </button>
                   </div>
-                )}
+                )} */}
               </div>
             </div>
           </div>
