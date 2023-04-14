@@ -14,6 +14,7 @@ import Privacy from './PrivacyPolicy';
 import CheckoutPage from './CheckoutPage';
 import SuccessPage from './SuccessPage';
 import TestLanding from './TestLanding'
+import ResourcesPage from './Resources'
 import UserProvider from './Usercontext';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
@@ -40,6 +41,7 @@ const App = () => {
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/success" element={<SuccessPage />} />
             <Route path="/test-landing" element={<TestLanding />} />
+            <Route path="/resources" element={<ResourcesPage />} />
           </Routes>
         </Elements>
         <Footer />

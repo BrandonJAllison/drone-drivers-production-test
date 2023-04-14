@@ -1,7 +1,7 @@
 .profile-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 80vh;
     justify-content: flex-start;
     padding: 20px;
     background-color: #f2f2f2;

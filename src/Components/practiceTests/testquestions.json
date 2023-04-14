@@ -61,5 +61,154 @@
     "category":"Performance",
     "answers":["Humidity increases performance.","Humidity decreases performance.", "Humidity has no effect on performance."],
     "correctAnswerIndex": 1
+  },
+  {
+    "question":"In a fixed wing aircraft, yaw is controlled by:",
+    "link":"",
+    "category":"Performance",
+    "answers":["The horizontal stabilizer.","The rotors.", "The rudder."],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question":"When loading cameras or other equipment on an unmanned aircraft, mount them so that:",
+    "link":"",
+    "category":"Performance",
+    "answers":["Does not adversely effect the center of gravity.","Aligns with the relative wind.", "Beyond the aft limit of the center of gravity."],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question":"In Figure 1, the acute angle “A” is the: ",
+    "link":"https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+1+Lift+Diagram.png",
+    "category":"Performance",
+    "answers":["Center of Gravity","Angle of Attack", "Relative Wind"],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question":"What is a consequence of operating an unmanned aircraft above its maximum allowable weight?",
+    "link":"",
+    "category":"Performance",
+    "answers":["Shorter endurance.","Better performance.", "Adversely effects the center of gravity."],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question":"According to 14CFR part 107, who is responsible for determining the performance of a small unmanned aircraft before, during, and after a flight?",
+    "link":"",
+    "category":"Regulations",
+    "answers":["The control operator","The visual observer.", "Remote pilot-in-command"],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question":"Falsifying records that are required to show compliance with a requirement of Part 107 can lead to:",
+    "link":"",
+    "category":"Regulations",
+    "answers":["Denial of application for Remote Pilot, waivers, or suspension/revocation, or a civil penalty. ","Arrest.", "Impounding and destruction of your small UAS."],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question":"You plan to operate a 33lb sUAS to capture aerial imagery over real estate for use in sales listings.  Is this sUAS operation subject to 14 CFR Part 107?",
+    "link":"",
+    "category":"Regulations",
+    "answers":["No, this qualifies as a recreational flyer.","Yes, this sUAS operation is subject to Part 107.", "It depends upon the intent of the flight."],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question":"You are part of an ABC news crew, operating a small UAS to cover a breaking story.  You experience a flyaway during landing.  The unmanned aircraft goes out of control and strikes a parked vehicle, causing approximately $800 worth of damage to the vehicle.  When must you report the accident?",
+    "link":"",
+    "category":"Regulations",
+    "answers":["Within 60 days because there was no loss of consciousness.","Within 10 days.", "You’re not required to report the damage, because it didn’t cause serious injury."],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question":"Which of the following operations would be regulated by 14 CFR 107?",
+    "link":"",
+    "category":"Regulations",
+    "answers":["Operating your sUAS to conduct inspections for an Electric Distribution company.","Operating your sub 250gram sUAS in your backyard to film your new puppy.", "Operating your sUAS in an FAA recognized Identification Area (FRIA)."],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question":"Unmanned aircraft means an aircraft operated",
+    "link":"",
+    "category":"Regulations",
+    "answers":["Without the possibility of direct human intervention from within or on the aircraft. ","Drones and gliders.", "Experimental aircraft with auto-pilot."],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question":"Within how many days must an sUAS accident be reported to the FAA?",
+    "link":"",
+    "category":"Regulations",
+    "answers":["10 days.","30 days.", "60 days."],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question":"Who should you make your documents available to when asked?",
+    "link":"",
+    "category":"Regulations",
+    "answers":["The Administrator, authorized representatives from the NTSB, TSA, any Federal, State or local Law enforcement officers.","The Administrator, Security Guards, and State or Local Law enforcement officers.", "The Administrator, the NRA, and State or Local Law enforcement officers."],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question":"You recently renewed your FAA Remote Pilot certificate by taking recurrent training.  While surveying a property for a customer, an FAA Aviation Safety Inspector asks to see documents showing you can legally fly your sUAS for commercial purposes.  Which document(s) do you provide:",
+    "link":"",
+    "category":"Regulations",
+    "answers":["Remote pilot certificate and State Driver’s License.","Remote pilot certificate, registration card, and a copy of the completion certificate for the recurrent training.", "Registration card and State Driver’s License."],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question":"While operating a sUAS you experience a flyaway and six people suffer injuries.  Which of the following injuries would require reporting to the FAA?",
+    "link":"",
+    "category":"Regulations",
+    "answers":["An injury that causes minor cuts and abrasions.","An injury requiring an overnight hospital stay.", "One of the individuals is not hurt, but claims traumatization from the fear of being hit by a falling sUAS."],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question":"A person whose only task is watching the Unmanned Aircraft to report hazards to the rest of the crew is called?",
+    "link":"",
+    "category":"Regulations",
+    "answers":["Control Operator.","Visual Observer.", "Lookout.", "Remote Pilot in Command."],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question":"Which of the following types of operations are excluded from the requirements of Part 107?",
+    "link":"",
+    "category":"Regulations",
+    "answers":["Sub 250 gram Unmanned Aircraft used for surveying buildings.","Model aircraft for recreational flying.", "Self-built Unmanned Aircraft that weights 11 pounds. "],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question":"According to 14 CFR 107, an sUAS is an unmanned aircraft system weighing ",
+    "link":"",
+    "category":"Regulations",
+    "answers":["Up to and including 55 lbs.","Less than 55lbs. ", "Greater than 250 grams. "],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question":"What is the base of Class B airspace based at Lakeview Airport 30F (NW of Area 2 on Chart) Figure 8?",
+    "link":"https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+8_DFW.pdf",
+    "category":"Chart Questions",
+    "answers":["3,000 MSL","1,800 MSL", "11,000 MSL", "4,000 MSL"],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question":"The airspace directly overlying Fort Worth Meacham is (SE of 4)?  Figure 8.",
+    "link":"https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+8_DFW.pdf",
+    "category":"Chart Questions",
+    "answers":["Class D airspace to 3,200 MSL","3,200 AGL", "4,000 MSL", "2,000 MSL"],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question":"Identify the airspace over Bryn Airport? Figure 9",
+    "link":"https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+9_Devils_Lake_MOA.pdf",
+    "category":"Chart Questions",
+    "answers":["Class G Airspace – surface up to but not including 1,200feet AGL; Class E Airspace – 1,200’AGL up to but not including 18,000 feet MSL.","Class A Airspace", "Glass E Airspace", "Restricted Area"],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question":"What is the area Northeast of Gila Bend (point 3) that is outlined with a solid blue line and has blue dots inside?",
+    "link":"",
+    "category":"Chart Questions",
+    "answers":["Wilderness Area.","Restricted Area.", "Warning Area.", "NOTAM Area."],
+    "correctAnswerIndex": 0
   }
+
+
 ]

@@ -65,8 +65,8 @@ const TestComponent = () => {
   useEffect(() => {
     const shuffledQuestions = [...questionsData];
     shuffleArray(shuffledQuestions);
-    setQuestions(shuffledQuestions.slice(0, 15));
-    setSelectedOptions(new Array(15).fill(""));
+    setQuestions(shuffledQuestions.slice(0, 30));
+    setSelectedOptions(new Array(30).fill(""));
     setStartTime(new Date());
   }, []);
 
@@ -226,8 +226,8 @@ return (
       <h2>{question.question}</h2>
       {question.link && (
         <p>
-          <a href={question.link} target="_blank" rel="noreferrer">
-            Open link
+          <a href={question.link} target="_blank" rel="noreferrer" className="open_link">
+            Open Chart 
           </a>
         </p>
       )}

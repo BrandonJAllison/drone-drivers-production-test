@@ -60,6 +60,9 @@ const Header = () => {
               <Link to="/test-landing" className="header__dropdown__item">
                 Testing
               </Link>
+              <Link to="/resources" className="header__dropdown__item">
+                Resources
+              </Link>
               <button className="header__dropdown__button" onClick={handleLogout}>Logout</button>
             </div>
           </div>

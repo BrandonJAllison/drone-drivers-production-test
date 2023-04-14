@@ -214,7 +214,7 @@
         "subChapters": [
           {
             "title": "12. Aero Decision Making",
-            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/3.1+Airspace+-+Overview.mp4",
+            "videoUrl": "https://dronedriver-development-codebase.s3.amazonaws.com/video/12.+Aero+Decision+Making+v1.mp4",
             "description": ""
           }
         ],
@@ -226,5 +226,6 @@
           }
         ]
       }
+      
     ]
   }
