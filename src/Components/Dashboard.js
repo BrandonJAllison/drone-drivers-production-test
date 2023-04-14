@@ -1,29 +1,44 @@
-import { useContext } from "react";
-import { UserContext } from "../Usercontext";
+import React, { useState, useEffect } from 'react';
+import './Dashboard.css';
 
-const Dashboard = () => {
-  const { state } = useContext(UserContext);
-  const { user } = state;
+function Dashboard() {
+  const [completedTests, setCompletedTests] = useState([]);
+
+  useEffect(() => {
+    // Fetch completed tests data here and set it to the state
+    // Example: fetch('https://api.example.com/completed-tests')
+    //           .then(response => response.json())
+    //           .then(data => setCompletedTests(data));
+  }, []);
 
   return (
-    <div style={{ height: "100vh", width: "100vw" }}>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100%",
-          width: "100%",
-        }}
-      >
-        {user && user ? (
-          <h1>Welcome to the Dashboard, {user.firstName}!</h1>
-        ) : (
-          <h1>Please log in to access the Dashboard</h1>
-        )}
+    <div className="dashboard-container">
+      <div className="section">
+        <h1>Completed Tests</h1>
+        <ul>
+          {completedTests.map(test => (
+            <li key={test.id}>
+              Test: {test.name} | Date Taken: {test.dateTaken} | Score: {test.score}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="section">
+        <h1>Membership</h1>
+        <ul>
+          {/* Display membership details here */}
+        </ul>
+      </div>
+
+      <div className="section">
+        <h1>Invoices</h1>
+        <ul>
+          {/* Display invoices here */}
+        </ul>
       </div>
     </div>
   );
-};
+}
 
 export default Dashboard;
