@@ -155,7 +155,7 @@ const TestComponent = () => {
   
     return (
       <div className="quiz-container">
-        <div className="result-container" id="result-container" >
+        <div className="result-container" id="result-container">
           <h2>Results</h2>
           <p>Correct: {score.correct}</p>
           <p>Incorrect: {score.incorrect}</p>
@@ -172,7 +172,7 @@ const TestComponent = () => {
                     if (answer === q.answers[q.correctAnswerIndex]) {
                       optionStyle = "correct-answer";
                     } else if (
-                      answer === selectedOptions[index] &&
+                      answer === q.answers[selectedOptions[index]] &&
                       answer !== q.answers[q.correctAnswerIndex]
                     ) {
                       optionStyle = "wrong-answer";

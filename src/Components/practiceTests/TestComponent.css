@@ -1,8 +1,9 @@
 .quiz-container {
     max-width: 800px;
-    margin: 100px auto;
+    margin: 25px auto;
     font-family: Arial, sans-serif;
-    height:100vh;
+    margin-bottom:500px;
+    
   }
   
   .timer-container {
@@ -62,7 +63,7 @@
   }
   
   .nav-button {
-    background-color: blue;
+    background-color: #006193;
     border: none;
     color: white;
     cursor: pointer;
@@ -73,6 +74,7 @@
   
   .result-container {
     margin: 20px 0;
+    
   }
   
   .result-question {
