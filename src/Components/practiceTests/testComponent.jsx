@@ -3,7 +3,7 @@ import questionsData from "./testquestions.json";
 import "./TestComponent.css";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-import domtoimage from 'dom-to-image';
+
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {

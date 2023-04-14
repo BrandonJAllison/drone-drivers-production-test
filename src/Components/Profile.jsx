@@ -17,7 +17,8 @@ const Dashboard = () => {
         }}
       >
         {user && user ? (
-          <h1>Welcome to the Profile, {user.firstName}!</h1>
+          <h1>Welcome to the Profile, {user.firstName}, {user.lastName}!</h1>
+          
         ) : (
           <h1>Please log in to access your user Profile</h1>
         )}
