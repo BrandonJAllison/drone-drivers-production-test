@@ -13,6 +13,7 @@ import Test from './Testing';
 import Privacy from './PrivacyPolicy';
 import CheckoutPage from './CheckoutPage';
 import SuccessPage from './SuccessPage';
+import TestLanding from './TestLanding'
 import UserProvider from './Usercontext';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
@@ -38,6 +39,7 @@ const App = () => {
             <Route path="/privacy-policy" element={<Privacy />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/success" element={<SuccessPage />} />
+            <Route path="/test-landing" element={<TestLanding />} />
           </Routes>
         </Elements>
         <Footer />

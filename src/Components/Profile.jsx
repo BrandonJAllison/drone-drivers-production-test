@@ -11,7 +11,7 @@ function Profile() {
       {user && (
         <>
           <div className="section">
-            <h1>Personal Information</h1>
+            <h1>Drone Drivers User Profile</h1>
             <ul>
               <li>
                 <span className="info-label">Name:</span>{" "}
@@ -26,13 +26,12 @@ function Profile() {
               <li>
                 <span className="info-label">Address:</span> {user.address}
               </li>
+              <li>
+              <span className="info-label">Bio:</span> {user.bio}
+              </li>
             </ul>
           </div>
 
-          {/* <div className="section">
-            <h1>Bio</h1>
-            <p>{user.bio}</p>
-          </div> */}
         </>
       )}
 
