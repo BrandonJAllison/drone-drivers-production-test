@@ -27,12 +27,20 @@ const Register = () => {
       console.error(err);
     }
   };
-
+  
   return (
     <div className="register-container">
       <h1 className="register-title">REGISTER</h1>
 
       <form className="register-form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          className="form-control mb-4 p-4"
+          value={firstName}
+          onChange={(event) => setFirstName(event.target.value)}
+          placeholder="Enter First Name"
+          required
+        />
         <input
           type="email"
           className="form-control mb-4 p-4"
@@ -42,6 +50,15 @@ const Register = () => {
           required
         />
 
+        <input
+          type="text"
+          className="form-control mb-4 p-4"
+          value={username}
+          onChange={(event) => setUsername(event.target.value)}
+          placeholder="Enter Username"
+          required
+        />
+        
         <input
           type="password"
           className="form-control mb-4 p-4"
@@ -60,16 +77,8 @@ const Register = () => {
           required
         />
 
-        {/* <input
-          type="text"
-          className="form-control mb-4 p-4"
-          value={firstName}
-          onChange={(event) => setFirstName(event.target.value)}
-          placeholder="Enter First Name"
-          required
-        />
 
-        <input
+        {/* <input
           type="text"
           className="form-control mb-4 p-4"
           value={lastName}
@@ -78,14 +87,6 @@ const Register = () => {
           required
         /> */}
 
-        <input
-          type="text"
-          className="form-control mb-4 p-4"
-          value={username}
-          onChange={(event) => setUsername(event.target.value)}
-          placeholder="Enter Username"
-          required
-        />
 
 <label style={{ display: 'inline-block', marginRight: '10px' }}>
     <input
