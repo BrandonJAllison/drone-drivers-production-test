@@ -5,6 +5,7 @@ const ResourcesPage = () => {
   
   return (
     <div className="resources-page">
+      <div>
       <div className="welcome">
       <h2>Welcome to Our Resources Page</h2>
         <p>We are delighted to provide you with a broad range of resources that have been expertly curated to help you excel in your educational journey. This page features an assortment of guides, informative articles, study materials, and many more valuable resources.</p>
@@ -25,6 +26,7 @@ const ResourcesPage = () => {
         <li>For questions involving use of a graph, you may request a printed copy that you can mark in computing your answer. This copy and all other notes and paperwork are given to the testing center upon completion of the test.</li>
     </ol>
 </div>
+    </div>
     </div>
   );
 };

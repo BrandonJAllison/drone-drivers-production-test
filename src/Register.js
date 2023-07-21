@@ -87,6 +87,18 @@ const Register = () => {
           required
         />
 
+<label style={{ display: 'inline-block', marginRight: '10px' }}>
+    <input
+      type="checkbox"
+      required
+    />
+  </label>
+  <span style={{ display: 'inline-block' }}>
+    I have read and agree to the <a href="https://drone-drivers.nyc3.digitaloceanspaces.com/Legaleze_for_website.docx.pdf" target="_blank">Terms of Use</a>.
+  </span>
+  
+  
+
         <button type="submit" className="btn btn-block btn-primary">
           Sign up
         </button>
