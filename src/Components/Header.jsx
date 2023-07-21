@@ -17,17 +17,17 @@ const Header = () => {
     navigate('/login');
   };
 
-  // useEffect(() => {
-  //   // Check if the user has purchased the course
-  //   const hasPurchasedCourse = // Logic to check if the user has purchased the course
-  //   setShowPurchaseButton(!hasPurchasedCourse); // Hide the Purchase Course button if the user has purchased the course
-  // }, [user]);
-
   return (
     <header className="header">
+      <input type="checkbox" id="toggle" style={{display: "none"}} />
       <div className="header__left">
         <img src={Logo} alt="logo" className="logo1" />
       </div>
+      <label htmlFor="toggle" className="header__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
       <div className="header__right">
         <Link to="/" className="header__link">
           Home

@@ -48,7 +48,7 @@ const CheckoutPage = () => {
         <form onSubmit={handleSubmit}>
           <p>Amount: $25.00</p>
           <button type="submit" disabled={!stripe || loading}>
-            {loading ? 'Processing...' : 'Pay'}
+            {loading ? 'Processing...' : 'Buy The Course'}
           </button>
         </form>
       </div>

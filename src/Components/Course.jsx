@@ -10,7 +10,7 @@ const Course = () => {
   const [showQuiz, setShowQuiz] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [result, setResult] = useState(null);
-  const [isCourseLocked, setIsCourseLocked] = useState(false);
+  const [isCourseLocked, setIsCourseLocked] = useState(true);
 
 
 

@@ -1,74 +1,96 @@
 .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: white;
-  }
-  
-  .login-title {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    color: #4a4a4a;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: white;
+}
+
+.login-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #4a4a4a;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin-bottom: 2rem;
+}
+
+.login-form input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc; /* Add border */
+  padding: 1rem;
+  margin: 20px;
+  font-size: 1.2rem;
+  color: #4a4a4a;
+}
+
+.login-form button {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  background-color: #006193; /* Match register form button color */
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #006193; /* Match register form hover button color */
+  cursor: pointer;
+}
+
+.login-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-links p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #4a4a4a;
+}
+
+.login-links a {
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.login-links a:hover {
+  color: #0062cc;
+  text-decoration: none;
+}
+
+/* Styles for screens that are 600px or less */
+@media screen and (max-width: 600px) {
   .login-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    margin-bottom: 2rem;
+    width: 80%;
   }
-  
-  .login-form input {
-    width: 100%;
-    border-radius: 5px;
-    border: none;
-    padding: 1rem;
-    margin: 20px;
-    font-size: 1.2rem;
-    color: #4a4a4a;
+
+  .login-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
-  
+
+  .login-form input,
   .login-form button {
-    width: 100%;
-    border-radius: 5px;
-    border: none;
-    padding: 1rem;
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    background-color: #007bff;
-    color: #fff;
-    transition: background-color 0.3s ease;
-  }
-  
-  .login-form button:hover {
-    background-color: #0062cc;
-    cursor: pointer;
-  }
-  
-  .login-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .login-links p {
     font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #4a4a4a;
+    padding: 0.5rem;
+    width: 100%;
   }
-  
-  .login-links a {
-    color: #007bff;
-    font-weight: bold;
-    transition: color 0.3s ease;
+
+  .login-links p {
+    font-size: 0.9rem;
   }
-  
-  .login-links a:hover {
-    color: #0062cc;
-    text-decoration: none;
-  }
-  
+}

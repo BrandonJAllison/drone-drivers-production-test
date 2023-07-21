@@ -7,12 +7,18 @@ const Register = () => {
   let navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState(''); // Added this line
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [username, setUsername] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (password !== confirmPassword) {  // Added this check
+      alert("Passwords don't match");
+      return;
+    }
+
     try {
       await axios.post('https://sea-turtle-app-l7rbe.ondigitalocean.app/api/signup', { email, password, firstName, lastName, username });
       console.log('User signed up successfully.');
@@ -45,7 +51,16 @@ const Register = () => {
           required
         />
 
-        <input
+        <input  // This is the new password confirmation field
+          type="password"
+          className="form-control mb-4 p-4"
+          value={confirmPassword}
+          onChange={(event) => setConfirmPassword(event.target.value)}
+          placeholder="Confirm Password"
+          required
+        />
+
+        {/* <input
           type="text"
           className="form-control mb-4 p-4"
           value={firstName}
@@ -61,7 +76,7 @@ const Register = () => {
           onChange={(event) => setLastName(event.target.value)}
           placeholder="Enter Last Name"
           required
-        />
+        /> */}
 
         <input
           type="text"
