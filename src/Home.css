@@ -260,6 +260,17 @@
     border-radius: 10px; /* Rounded corners */
     background:black;
 }
+
+.whatis-img2 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  border: 2px solid rgba(0, 0, 0, 0.1); /* Subtle border for the video */
+  padding: 10px; /* Some spacing around the video */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  border-radius: 10px; /* Rounded corners */
+  background:black;
+}
   
 .whatis-text {
     flex: 1;
