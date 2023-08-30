@@ -4,16 +4,32 @@
   } */
   
   .home-header {
-    width: 100%;
+    background-image: url('https://dronedriver-development-codebase.s3.amazonaws.com/images/drone-header.png');
+    background-size: contain; /* Adjust the image to fit inside the div */
+    background-repeat: no-repeat;
+    background-position: right center;
+    height: auto; 
     display: flex;
-    justify-content: center;
-    height: 100vh;
+    justify-content: flex-start; /* Aligns form to the left */
+    align-items: center; /* Keeps the form vertically centered */
+    padding-left: 50px; /* Some padding to avoid the form sticking directly to the edge */
   }
   
-  .home-header img {
-    max-width: 100%;
+  .login-form {
+    background-color: rgba(255, 255, 255, .96); /* Decreased transparency */
+    padding: 20px;
+    border-radius: 10px;
+    width: 320px; /* Increased width to give more room for the inputs */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   }
   
+  .login-form input {
+    width: 100%; /* Ensure the inputs take the full width of the form */
+    padding: 10px; 
+    margin: 5px 0; 
+    box-sizing: border-box; /* This ensures padding and border are included in the total width */
+  }
+
   .section-header {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -41,6 +57,7 @@
     padding: 30px;
     gap: 0 40px;
     font-size: 1.25rem;
+    text-align:center;
     
   }
   
@@ -145,6 +162,7 @@
       color: #333;
       padding: 0px;
       margin-top:15px;
+      text-align:center;
     }
 
     .learn-description p {
@@ -191,3 +209,60 @@
     }
     
   }
+
+
+
+
+
+
+  .section-container {
+    padding: 40px 20px; /* Increase padding for more space */
+    border: 2px solid #E0E0E0;
+    background-color: #F9F9F9;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+  
+.section-header {
+    font-size: 26px;
+    margin-bottom: 30px; /* Increase margin for spacing */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    padding: 10px 0; /* Add padding for the header */
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background for the header */
+}
+  
+.logo_header {
+    margin-right: 15px;
+}
+  
+.whatis-section {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 30px; /* Increase gap for more spacing */
+    padding: 0 10%;
+}
+  
+.whatis-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    border: 2px solid rgba(0, 0, 0, 0.1); /* Subtle border for the video */
+    padding: 10px; /* Some spacing around the video */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+    background:black;
+}
+  
+.whatis-text {
+    flex: 1;
+    text-align: justify;
+    padding: 0 20px;
+}

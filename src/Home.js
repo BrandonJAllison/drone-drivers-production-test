@@ -17,8 +17,21 @@ const Home = () => {
     <div className="home-wrapper">
       {/* Header Image */}
       <div className="home-header">
-        <img src='https://dronedriver-development-codebase.s3.amazonaws.com/images/drone-header.png' alt="drone driver header " />
-      </div>
+  <form className="login-form">
+    <h2>Login</h2>
+    <div>
+      <label htmlFor="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+    </div>
+    <div>
+      <label htmlFor="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+    </div>
+    <div>
+      <button type="submit">Login</button>
+    </div>
+  </form>
+</div>
 
       {/* What Is Drone Driver Section */}
       <div className="section-container">
