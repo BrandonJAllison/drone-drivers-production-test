@@ -2,7 +2,7 @@ import ReactPlayer from 'react-player';
 import './Home.css';
 import CookieConsent from "react-cookie-consent";
 import { useCookies } from "react-cookie";
-import Instructor from '../src/Jim_Jones.png'
+// import Instructor from '../src/Jim_Jones.png'
 
 const Home = () => {
 
@@ -47,7 +47,7 @@ Don't just pass the Part 107 exam – excel on it. Enroll in our FAA Part 107 te
   </h1>
   <div class="instructor-section">
     <div class="instructor-img">
-      <img src={Instructor} alt="Jim Jones" width={350}/>
+      {/* <img src={Instructor} alt="Jim Jones" width={350}/> */}
     </div>
     <div class="instructor-text">
       
