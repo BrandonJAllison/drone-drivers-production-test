@@ -6,8 +6,6 @@ import { useCookies } from "react-cookie";
 
 const Home = () => {
 
-  
-
     const [cookies, setCookie] = useCookies(["myWebsiteCookieConsent"]);
 
     function handleAccept() {
@@ -19,50 +17,20 @@ const Home = () => {
     <div className="home-wrapper">
       {/* Header Image */}
       <div className="home-header">
-      <h1 className="login-title">LOGIN</h1>
-
-<form className="login-form" onSubmit={handleSubmit}>
-  <input
-    type="email"
-    className="form-control mb-4 p-4"
-    value={email}
-    onChange={(e) => setEmail(e.target.value)}
-    placeholder="Enter email"
-    required
-  />
-
-  <input
-    type="password"
-    className="form-control mb-4 p-4"
-    value={password}
-    onChange={(e) => setPassword(e.target.value)}
-    placeholder="Enter password"
-    required
-  />
-
-  <button
-    type="submit"
-    className="btn btn-block btn-primary"
-    disabled={!email || !password || loading}
-  >
-    {loading ? <Spin /> : "Login"}
-  </button>
-</form>
-
-<div className="login-links">
-  <p className="text-center" style={{color:'black'}}>
-    Not yet registered?{" "}
-    <Link to="/register">
-      Register
-    </Link>
-  </p>
-
-  <p className="text-center">
-    <Link to="/forgot-password">
-      Forgot password
-    </Link>
-  </p>
-</div>
+  <form className="login-form">
+    <h2>Login</h2>
+    <div>
+      <label htmlFor="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+    </div>
+    <div>
+      <label htmlFor="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+    </div>
+    <div>
+      <button type="submit">Login</button>
+    </div>
+  </form>
 </div>
 
       {/* What Is Drone Driver Section */}
