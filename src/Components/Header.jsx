@@ -23,7 +23,7 @@ const Header = () => {
       <div className="header__left">
         <img src={Logo} alt="logo" className="logo1" />
       </div>
-      <label htmlFor="toggle" className="header__toggle">
+      {/* <label htmlFor="toggle" className="header__toggle">
         <span></span>
         <span></span>
         <span></span>
@@ -72,7 +72,7 @@ const Header = () => {
             Purchase Course
           </Link>
         )}
-      </div>
+      </div> */}
     </header>
   );
 };
