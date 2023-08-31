@@ -6,6 +6,8 @@ import { useCookies } from "react-cookie";
 
 const Home = () => {
 
+  
+
     const [cookies, setCookie] = useCookies(["myWebsiteCookieConsent"]);
 
     function handleAccept() {
