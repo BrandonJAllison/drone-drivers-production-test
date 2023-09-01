@@ -255,6 +255,186 @@
       "A steady green light."
     ],
     "correctAnswerIndex": 0
+  },
+  {
+    "question": "What type of airport is Sky Way (Pvt)? Figure 14, Area 6.",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+14+Sacramento.pdf",
+    "category": "Airport Types",
+    "answers": [
+      "A nonpublic use airport.",
+      "An airport restricted to recreational pilots.",
+      "A restricted military field.",
+      "A special use airport, restricted to helicopters."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "What type of airspace is over Bryn Airport. Figure 9, S Area 2.",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+9_Devils_Lake_MOA.pdf",
+    "category": "Airspace Classification",
+    "answers": [
+      "Class G airspace – surface up to but not including 1,200 feet AGL; Class E airspace – 1,200 feet AGL up to but not including 18,000 feet MSL.",
+      "Class G airspace – surface up to but not including 700 feet MSL; Class E airspace – 700 feet to 14,500 feet MSL.",
+      "Class G airspace – surface up to but not including 18,000 feet MSL.",
+      "Class E airspace – surface up to but not including 18,000 feet MSL."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "You are operating your small unmanned aircraft approximately 4 SM southeast of Elizabeth City Regional Airport (ECG). What hazard is indicated to be in that area? Figure 12, Area 3.",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+12_Norfolk.pdf",
+    "category": "Hazard Identification",
+    "answers": [
+      "Unmarked balloon on cable to 3,008 feet MSL.",
+      "High density military operations.",
+      "Unmarked balloon on cable up to 3,008 feet AGL.",
+      "High density of pilot training."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "What is the floor of Class B airspace at Dallas Executive Airport (RBD)? (Figure 8; Area 3)",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+8_DFW.pdf",
+    "category": "Airspace Altitude",
+    "answers": [
+      "3,000 feet MSL.",
+      "3,100 feet MSL.",
+      "11,000 feet AGL.",
+      "11,000 feet MSL."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "What is the height of the lighted obstacle approximately 6 nautical miles southwest of Savannah International? Figure 13",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+13+Savannah.pdf",
+    "category": "Obstacle Height",
+    "answers": [
+      "1,548 MSL – tower with lightning bolt symbols at top.",
+      "1,498 MSL.",
+      "1,513 AGL.",
+      "374 MSL."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "What is the approximate latitude and longitude of Cooperstown Airport? Figure 9; Area 2.",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+9_Devils_Lake_MOA.pdf",
+    "category": "Airport Coordinates",
+    "answers": [
+      "47deg 25min N - 98deg 06min W",
+      "47deg 25min N – 99deg 06min W",
+      "47deg 52min N - 98deg 54min W",
+      "48deg 54min N - 99deg 16min W"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "What depicts Class E airspace that begins at 700 feet AGL? Figure 7; Airport Traffic Service and Airspace Information.",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+7_Legend.pdf",
+    "category": "Airspace Depiction",
+    "answers": [
+      "A magenta vignette that goes around the airport. (vignette: dark magenta that fades to light).",
+      "A dashed blue circle around an airport.",
+      "A solid magenta circle around an airport.",
+      "Two solid blue circles around an airport."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "What is the floor of the Savannah Hilton Head airport’s Class C airspace at the shelf area (outer circle)? Figure 13, reference area 3",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+13+Savannah.pdf",
+    "category": "Airspace Altitude",
+    "answers": [
+      "1300’MSL",
+      "1,700’ MSL",
+      "1,300’AGL",
+      "4100 MSL"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "The airspace directly overlying Fort Worth Meacham is? Figure 8, SE reference area 4.",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+8_DFW.pdf",
+    "category": "Airspace Classification",
+    "answers": [
+      "Class D to 3,200’MSL – segmented blue line circle & box indicating 32; within class B for Dallas Fortworth (DFW).",
+      "Class B Airspace to 10,000’ MSL",
+      "Class C to 5,000 feet MSL",
+      "Class C to 5,000 feet AGL"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "The NALF Fentress (NFE) airport is in what type of airspace? Figure 12, South of Norfolk.",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+12_Norfolk.pdf",
+    "category": "Airspace Classification",
+    "answers": [
+      "Class E",
+      "Class C",
+      "Class G",
+      "Class B"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "Which is true concerning the blue and magenta colors used to depict airports on Sectional Aeronautical Charts? Figure 7",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+7_Legend.pdf",
+    "category": "Airport Depiction",
+    "answers": [
+      "Airports with Control towers underlying Class B, C, D, and E airspace are shown in blue.",
+      "Airports with control towers underlying class A, B, and C airspace are shown in blue.",
+      "Airports underlying Class D airspace are shown in magenta.",
+      "Airports with Control Towers underlying Class C, D, and E airspace are shown in magenta."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "For information about glider operations at Ridgeland Airport, refer to.",
+    "link": "",
+    "category": "Aviation Resources",
+    "answers": [
+      "The Chart Supplement.",
+      "METARS",
+      "FAA Dronezone",
+      "SFRA"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "What type of airspace is around Findlay (FDY) airport? Figure 11, area 3.",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+11_Toledo.pdf",
+    "category": "Airspace Classification",
+    "answers": [
+      "Class E – dashed magenta line & shaded magenta line.",
+      "Class D",
+      "Class C",
+      "Class A"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "What is the base of Class B airspace at Lakeview (30F) airport? Figure 8, NW area 2.",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+8_DFW.pdf",
+    "category": "Airspace Altitude",
+    "answers": [
+      "3000 MSL",
+      "4000 AGL",
+      "1700 AGL",
+      "4000 MSL"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "The airspace surrounding Gila Bend AF Aux airport (GXF) is classified as? Figure 10",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+10+Gila+Bend.pdf",
+    "category": "Airspace Classification",
+    "answers": [
+      "Class D airspace",
+      "Class C airspace",
+      "Class B airspace",
+      "Class E airspace"
+    ],
+    "correctAnswerIndex": 0
   }
 
 
