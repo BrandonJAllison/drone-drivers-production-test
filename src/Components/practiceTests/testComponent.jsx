@@ -65,7 +65,7 @@ const TestComponent = () => {
   useEffect(() => {
     const shuffledQuestions = [...questionsData];
     shuffleArray(shuffledQuestions);
-    setQuestions(shuffledQuestions.slice(0, 30));
+    setQuestions(shuffledQuestions.slice(0, 60));
     setSelectedOptions(new Array(30).fill(""));
     setStartTime(new Date());
   }, []);

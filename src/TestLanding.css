@@ -56,6 +56,8 @@
     text-decoration: none;
     border-radius: 5px;
     margin-top: 20px;
+    max-width: 300px; /* Set a maximum width for the button */
+    width: 100%; /* Ensure the button takes up the available width within its container */
   }
   
   /* Add media query for mobile devices */
@@ -71,5 +73,6 @@
     .testing-button {
       font-size: 14px;
       padding: 8px 16px;
+      max-width: 250px; /* Adjust the maximum width for smaller screens */
     }
   }
