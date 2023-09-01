@@ -13,7 +13,7 @@ function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      <div className="section">
+      {/* <div className="section">
         <h1>Completed Tests</h1>
         <ul>
           {completedTests.map(test => (
@@ -22,7 +22,7 @@ function Dashboard() {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
 
       <div className="section">
         <h1>Membership</h1>
