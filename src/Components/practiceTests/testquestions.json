@@ -417,12 +417,12 @@
     "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+8_DFW.pdf",
     "category": "Airspace Altitude",
     "answers": [
-      "3000 MSL",
       "4000 AGL",
+      "3000 MSL",
       "1700 AGL",
       "4000 MSL"
     ],
-    "correctAnswerIndex": 0
+    "correctAnswerIndex": 1
   },
   {
     "question": "The airspace surrounding Gila Bend AF Aux airport (GXF) is classified as? Figure 10",
@@ -435,6 +435,468 @@
       "Class E airspace"
     ],
     "correctAnswerIndex": 0
+  },
+  {
+    "question": "Where is Loup City Municipal located with relation to Loup City (Figure 6)?",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+6_Lincoln_Chart_Supp.pdf",
+    "category": "Airport Location",
+    "answers": [
+      "10 nautical miles NW",
+      "1 statute mile NW",
+      "1 nautical mile NW",
+      "1 mile"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "As a remote Pilot in Command (rPIC) operating near an airport located in uncontrolled airspace, you should:",
+    "link": "",
+    "category": "Remote Pilot Responsibilities",
+    "answers": [
+      "Make radio calls on CTAF",
+      "Be sure not to interfere with airport operations",
+      "Fly your drone at 1500 feet AGL",
+      "Do what you want because you are in uncontrolled airspace."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "What is an airport Security Identification Display Area (SIDA)?",
+    "link": "",
+    "category": "Airport Designation",
+    "answers": [
+      "An area where you can fly your drone without Remote ID.",
+      "An area where aircraft are not allowed to taxi.",
+      "An area in the airport where airport badges are required to access.",
+      "An area in the airport where airport badges are not required."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "What is the base of the outer volume of Class C Airspace?",
+    "link": "",
+    "category": "Airspace Altitude",
+    "answers": [
+      "1200 feet AGL. Class C is composed of two cylinders. The inner cylinder starts at the surface and goes to 4,000 feet AGL. The outer cylinder starts at 1200 feet AGL to 4,000 feet AGL.",
+      "4,000 feet AGL",
+      "1200 feet MSL",
+      "700 feet AGL"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "According to 14 CFR part 107, the rPIC of a small unmanned aircraft planning to operate within Class C airspace.",
+    "link": "",
+    "category": "Airspace Authorization",
+    "answers": [
+      "Is required to receive ATC authorization. –Done via LAANC request or FAA dronezone website.",
+      "No ATC authorization is required.",
+      "The rPIC cannot fly an unmanned aircraft in Class C airspace.",
+      "Use ADS-B."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "Airspace at an airport that operates a part-time control tower is classified as Class D airspace only",
+    "link": "",
+    "category": "Airspace Classification",
+    "answers": [
+      "When the associated control tower is in operation.",
+      "All of the time.",
+      "From sunset to sunrise.",
+      "30 min after sunset to 30min before sunrise."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "A blue segmented circle on a Sectional Chart depicts which class of airspace (Figure 7)?",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+7_Legend.pdf",
+    "category": "Airspace Classification",
+    "answers": [
+      "Class D Airspace",
+      "Class A Airspace",
+      "Class E Airspace",
+      "Wilderness Area"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "When a control tower located on an airport within Class D airspace ceases operation for the day, what happens to the airspace designation?",
+    "link": "",
+    "category": "Airspace Classification",
+    "answers": [
+      "The airspace reverts to Class E or a combination of Class E and Class G airspace during the hours the tower is not in operation.",
+      "Airspace remains Class D.",
+      "Airspace becomes Class A.",
+      "Airspace becomes Class C."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "The lateral dimensions of Class D airspace are based on:",
+    "link": "",
+    "category": "Airspace Dimensions",
+    "answers": [
+      "The instrument approach procedures for which the controlled airspace is established.",
+      "FAA definitions, all Class D airspace is the same.",
+      "VFR and IFR routes.",
+      "Adjacent Class B airspace."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "What is the base of Class B airspace based at Lakeview Airport 30F (NW of Area 2 on Chart) Figure 8?",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+8_DFW.pdf",
+    "category": "Airspace Altitude",
+    "answers": [
+      "1,800 MSL",
+      "3,000 MSL",
+      "11,000 MSL",
+      "4,000 MSL"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "The airspace directly overlying Fort Worth Meacham is (SE of 4)? Figure 8.",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+8_DFW.pdf",
+    "category": "Airspace Classification",
+    "answers": [
+      "Class D airspace to 3,200 MSL",
+      "3,200 AGL",
+      "4,000 MSL",
+      "2,000 MSL"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "Identify the airspace over Bryn Airport? Figure 9",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+9_Devils_Lake_MOA.pdf",
+    "category": "Airspace Classification",
+    "answers": [
+      "Class A Airspace",
+      "Glass E Airspace",
+      "Class G Airspace – surface up to but not including 1,200feet AGL; Class E Airspace – 1,200’AGL up to but not including 18,000 feet MSL.",
+      "Restricted Area"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "What is the area Northeast of Gila Bend (point 3) that is outlined with a solid blue line and has blue dots inside?",
+    "link": "",
+    "category": "Airspace Area",
+    "answers": [
+      "Wilderness Area.",
+      "Restricted Area.",
+      "Warning Area.",
+      "NOTAM Area."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "Information concerning parachute jumping sites may be found in the:",
+    "link": "",
+    "category": "Aviation Resources",
+    "answers": [
+      "Chart Supplement and NOTAMs.",
+      "METAR",
+      "Forecast Chart",
+      "TAF"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "The Chart shows a series of gray lines with arrows labeled VR1667, VR1617, VR1638, & VR1668 just South of reference point 2. Could this area present a hazard to the operations of a small Unmanned Aircraft? (figure 11)",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+11_Toledo.pdf",
+    "category": "Hazard Identification",
+    "answers": [
+      "Yes, these are Low Level Military Training Routes from surface to 1,500’AGL.",
+      "No, these are VFR flyways.",
+      "Yes, you should check NOTAMS.",
+      "No, Military Training Routes are only in Warning Areas."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "You have been hired by a local farmer to use your small Unmanned Aircraft to inspect his soybean fields. The farmer’s fields are in the Devil’s Lake West MOA, East of area 2. How would you find out if the Devil’s Lake MOA is active (Figure 9)?",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+9_Devils_Lake_MOA.pdf",
+    "category": "MOA Activation",
+    "answers": [
+      "Refer to the legend for special use airspace phone number. Contact Range Control to verify active date/times.",
+      "Refer to NOTAMS",
+      "Refer to METARS",
+      "Refer to the ADM Process."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "What hazards to aircraft may exist in Restricted Areas Like the R5302B, which is in Albemarle Sound (Figure 12)",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+12_Norfolk.pdf",
+    "category": "Hazard Identification",
+    "answers": [
+      "Hazards such as aerial gunnery or guided missile shoots, which are often invisible to the casual observer.",
+      "High volumes of pilot training.",
+      "Extreme weather events.",
+      "Special Flight Rules Areas (SFRAs)"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "What hazards to aircraft may exist in Military Operating Areas like Devil’s Lake East MOA? (Figure 9, area 1)",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+9_Devils_Lake_MOA.pdf",
+    "category": "Hazard Identification",
+    "answers": [
+      "Military training activities that necessitate aerobatic or abrupt flight maneuvers.",
+      "Guided Missile Shoots and Aerial Gunnery.",
+      "Wilderness Areas.",
+      "Special Flight Rules Areas (SFRAs)"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "Why would the small flag at Lake Drummond be important to a remote PIC? Lake Drummond is SW of Norfolk. (Figure 12, Area 2)",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+12_Norfolk.pdf",
+    "category": "Airspace Information",
+    "answers": [
+      "The flag indicates a large obstacle.",
+      "The flag indicates a VFR checkpoint for manned aircraft and a higher volume of air traffic should be expected there.",
+      "The flag indicates a LORAN checkpoint that can be used by both manned & remote pilots for orientation.",
+      "The flag indicates a missile firing area."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "What kind of airport is Deshler (6D7) Figure 11 SW of reference point 2?",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+11_Toledo.pdf",
+    "category": "Airport Types",
+    "answers": [
+      "A public airport with a runway that is not a hard surface.",
+      "Private airport with a paved surface.",
+      "Restricted airport with a runway that is not a hard surface.",
+      "Towered airport with a paved surface."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "Which is true concerning the blue and magenta colors used to depict airports on Sectional Aeronautical charts?",
+    "link": "",
+    "category": "Airport Depiction",
+    "answers": [
+      "Military Airports with control towers.",
+      "Seaplane airports with control towers.",
+      "Airports with control towers underlying Class B, C, D, and E airspace are shown in blue.",
+      "Heliport with control tower."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "Which sign indicates where aircraft are prohibited from entering? Reference Figure 3 “Signs”.",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+3_Signs.pdf",
+    "category": "Airport Signs",
+    "answers": [
+      "Item “D”",
+      "Item “C”",
+      "Item “A”",
+      "Item “E”"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "The numbers 4 and 22 on the approach ends of a runway indicate that the runway is oriented approximately (Figure 4):",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+4_Runway+Diagram.pdf",
+    "category": "Runway Orientation",
+    "answers": [
+      "040deg and 220deg Magnetic",
+      "040deg and 220deg True",
+      "4 deg and 22 deg Magnetic",
+      "40 deg and 22 deg True"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "Where is Coer D’Alene-Pappy Boyington Field located with relation to the city for Coer D’Alene, Idaho (Figure 5)?",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+5_Coeur+Dalene_chart_supp.pdf",
+    "category": "Airport Location",
+    "answers": [
+      "9 nautical miles NW",
+      "9 deg NW",
+      "9 statute miles NW",
+      "10 miles"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "Traffic patterns in effect at Lincoln Municipal (Figure 6) are:",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+6_Lincoln_Chart_Supp.pdf",
+    "category": "Traffic Patterns",
+    "answers": [
+      "To the left on runways 14 & 32. To the right on runways 18 & 35.",
+      "To the left on all runways.",
+      "To the right on all runways.",
+      "To the right on runways 14, 32, and 35."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "You have accepted baseball tickets in exchange for using your sUAS to videotape the ballfield before the game. Is the sUAS operation subject to 14 CFR 107?",
+    "link": "",
+    "category": "Part 107 Requirements",
+    "answers": [
+      "No, because no money was exchanged.",
+      "No, because you had permission to videotape the field.",
+      "Yes."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "You are operating a 1280g (2.8lb) quadcopter for your own recreational enjoyment. Is this sUAS operation subject to 14 CFR 107?",
+    "link": "",
+    "category": "Part 107 Requirements",
+    "answers": [
+      "No, this Unmanned Aircraft is not subject to Part 107.",
+      "Yes, because it is greater than 250grams."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "You purchased a new quadcopter that weighs .49lbs (220 grams) to conduct real estate inspections. Is this operation subject to 14 CFR Part 107?",
+    "link": "",
+    "category": "Part 107 Requirements",
+    "answers": [
+      "Yes, there is no lower weight limit for operating under 14 CFR 107.",
+      "No, your sUAS is less than 250 grams."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "Before each flight, the FAA requires that the Remote PIC ensure:",
+    "link": "",
+    "category": "Part 107 Requirements",
+    "answers": [
+      "Objects carried on the sUAS are secure.",
+      "Receive ATC clearance in uncontrolled airspace.",
+      "Cameras are turned on."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "What is the area Northeast of Gila Bend (point 3) that is outlined with a solid blue line and has blue dots inside?",
+    "link": "",
+    "category": "Airspace Identification",
+    "answers": [
+      "Wilderness Area.",
+      "Restricted Area.",
+      "Warning Area.",
+      "NOTAM Area."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "For information about glider operations at Ridgeland Airport, refer to.",
+    "link": "",
+    "category": "Airspace Information",
+    "answers": [
+      "The Chart Supplement.",
+      "METARS",
+      "FAA Dronezone",
+      "SFRA"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "What type of airspace is around Findlay (FDY) airport? Figure 11, area 3.",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+11_Toledo.pdf",
+    "category": "Airspace Classification",
+    "answers": [
+      "Class E – dashed magenta line & shaded magenta line.",
+      "Class D",
+      "Class C",
+      "Class A"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "What is the base of Class B airspace at Lakeview (30F) airport? Figure 8, NW area 2.",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+8_DFW.pdf",
+    "category": "Airspace Classification",
+    "answers": [
+      "3000 MSL",
+      "4000 AGL",
+      "1700 AGL",
+      "4000 MSL"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "The airspace surrounding Gila Bend AF Aux airport (GXF) is classified as? Figure 10",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+10+Gila+Bend.pdf",
+    "category": "Airspace Classification",
+    "answers": [
+      "Class C airspace",
+      "Class B airspace",
+      "Class E airspace",
+      "Class D airspace"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "What type of airport is Sky Way (Pvt)? Figure 14, Area 6.",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+14+Sacramento.pdf",
+    "category": "Airport Classification",
+    "answers": [
+      "A nonpublic use airport.",
+      "An airport restricted to recreational pilots.",
+      "A restricted military field.",
+      "A special use airport, restricted to helicopters."
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "What type of airspace is over Bryn Airport. Figure 9, S Area 2.",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+9_Devils_Lake_MOA.pdf",
+    "category": "Airspace Classification",
+    "answers": [
+      "Class G airspace – surface up to but not including 700 feet MSL; Class E airspace – 700 feet to 14,500 feet MSL.",
+      "Class G airspace – surface up to but not including 18,000 feet MSL.",
+      "Class G airspace – surface up to but not including 1,200 feet AGL; Class E airspace – 1,200 feet AGL up to but not including 18,000 feet MSL.",
+      "Class E airspace – surface up to but not including 18,000 feet MSL."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "You are operating your small unmanned aircraft approximately 4 SM southeast of Elizabeth City Regional Airport (ECG). What hazard is indicated to be in that area? Figure 12, Area 3.",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+12_Norfolk.pdf",
+    "category": "Airspace Hazards",
+    "answers": [
+      "High density military operations.",
+      "Unmarked balloon on cable to 3,008 feet MSL.",
+      "Unmarked balloon on cable up to 3,008 feet AGL.",
+      "High density of pilot training."
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "What is the floor of Class B airspace at Dallas Executive Airport (RBD)? (Figure 8; Area 3)",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+8_DFW.pdf",
+    "category": "Airspace Classification",
+    "answers": [
+      "3,100 feet MSL.",
+      "11,000 feet AGL.",
+      "3,000 feet MSL.",
+      "11,000 feet MSL."
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "What is the height of the lighted obstacle approximately 6 nautical miles southwest of Savannah International? Figure 13",
+    "link": "https://dronedriver-development-codebase.s3.amazonaws.com/images/Figure+13+Savannah.pdf",
+    "category": "Airspace Information",
+    "answers": [
+      "1,498 MSL",
+      "1,548 MSL – tower with lightning bolt symbols at top.",
+      "1,513 AGL",
+      "374 MSL"
+    ],
+    "correctAnswerIndex": 1
   }
 
 
