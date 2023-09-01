@@ -208,6 +208,53 @@
     "category":"Chart Questions",
     "answers":["Wilderness Area.","Restricted Area.", "Warning Area.", "NOTAM Area."],
     "correctAnswerIndex": 0
+  },
+  {
+    "question": "Information concerning parachute jumping sites may be found in the:",
+    "link": "",
+    "category": "Aviation Regulations",
+    "answers": [
+      "Chart Supplement and NOTAMs.",
+      "METAR",
+      "Forecast Chart",
+      "TAF"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "You experience an emergency and have to climb to an altitude above 700 feet AGL in order to avoid a possible collision with a manned airplane. Who must you report the deviation to?",
+    "link": "",
+    "category": "Emergency Procedures",
+    "answers": [
+      "Upon request of the Federal Aviation Administration.",
+      "State or local law enforcement.",
+      "NTSB"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "The most detailed airport information can be found in?",
+    "link": "",
+    "category": "Aviation Charts and Information",
+    "answers": [
+      "The U.S. Chart Supplement.",
+      "Sectional Chart",
+      "NOTAMS",
+      "METAR"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "A military airstation can be identified by a rotating beacon that emits:",
+    "link": "",
+    "category": "Aircraft Lighting and Identification",
+    "answers": [
+      "Two quick white flashes, between green flashes.",
+      "Red, white, and green flashes.",
+      "One white flash and one green flash.",
+      "A steady green light."
+    ],
+    "correctAnswerIndex": 0
   }
 
 
