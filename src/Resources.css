@@ -9,6 +9,14 @@
     max-width: 600px; /* Adjust this value as needed */
     margin: 20px;
   }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  li {
+    font-size: 1.5rem;
+  }
   
   /* Add media query for mobile devices */
   @media (max-width: 768px) {
