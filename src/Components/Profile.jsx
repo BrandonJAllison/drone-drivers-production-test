@@ -12,7 +12,7 @@ function Profile() {
         <>
          
       <div className="section">
-        <h1>User Information</h1>
+        <h1>My Information</h1>
         <ul>
               <li>
                 <span className="info-label">Name:</span>{" "}
@@ -31,6 +31,13 @@ function Profile() {
         <h1>Courses Completed</h1>
         <ul>
           <li>You Currently Have No Completed Courses</li>
+        </ul>
+      </div>
+
+      <div className="section">
+        <h1>Tests Completed</h1>
+        <ul>
+          <li>You Currently Have No Tests Courses</li>
         </ul>
       </div>
 
