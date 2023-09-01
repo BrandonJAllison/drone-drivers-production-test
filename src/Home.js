@@ -60,7 +60,7 @@ Don't just pass the Part 107 exam – excel on it. Enroll in our FAA Part 107 te
   </h1>
   <div class="instructor-section">
     <div class="instructor-img">
-      {/* <img src={Instructor} alt="Jim Jones" width={350}/> */}
+      <img src="https://dronedriver-development-codebase.s3.amazonaws.com/images/Jim_Jones.png" alt="Jim Jones" width={350}/>
     </div>
     <div class="instructor-text">
       
