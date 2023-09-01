@@ -27,7 +27,62 @@
     color:white;
     cursor: pointer;
   } */
-
+  .test-landing {
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh; /* Ensure the content takes up at least the full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center content horizontally */
+  }
+  
+  .test-landing h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .test-landing p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .testing-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    max-width: 300px;
+    width: 100%;
+  }
+  
+  /* Adjust styles for mobile devices */
+  @media (max-width: 768px) {
+    .test-landing {
+      padding: 10px; /* Reduce padding for mobile */
+    }
+  
+    .test-landing h1 {
+      font-size: 20px;
+      margin-bottom: 5px; /* Adjust margin for mobile */
+    }
+  
+    .test-landing p {
+      font-size: 14px;
+      margin: 5px 0; /* Adjust margin for mobile */
+    }
+  
+    .testing-button {
+      font-size: 14px;
+      padding: 8px 16px;
+      max-width: 250px;
+      margin-top: 15px;
+    }
+  }
   .test-landing {
     text-align: center;
     padding: 20px;
