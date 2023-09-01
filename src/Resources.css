@@ -1,15 +1,19 @@
-.resources-page{
-    height: 100vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+.resources-page {
+    display: flex;
     flex-direction: column;
-}
-
-
-
-.welcome{
-    width:80%;
-}
-
-
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .welcome, .test-tips {
+    max-width: 600px; /* Adjust this value as needed */
+    margin: 20px;
+  }
+  
+  /* Add media query for mobile devices */
+  @media (max-width: 768px) {
+    .welcome, .test-tips {
+      margin: 10px;
+      font-size: 14px;
+    }
+  }
