@@ -29,9 +29,9 @@ const Header = () => {
         <span></span>
       </label>
       <div className="header__right">
-        <Link to="/" className="header__link">
+        {/* <Link to="/" className="header__link">
           Home
-        </Link>
+        </Link> */}
         {!user && (
           <>
             <Link to="/register" className="header__link">
