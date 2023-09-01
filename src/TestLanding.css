@@ -31,6 +31,10 @@
   .test-landing {
     text-align: center;
     padding: 20px;
+    min-height: 100vh; /* Ensure the content takes up at least the full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   
   .test-landing h1 {
