@@ -26,7 +26,6 @@
   top: 60px;
   left: 0;
   background: white;
-  margin-top:-115px;
 }
 
 .header__link {
@@ -171,7 +170,23 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    /* margin-top:115px; */
-    
+    top: 0;                      /* Resetting the top value for desktop */
+    margin-top: 0;               /* Resetting any margin */
+  }
+
+  .header__link, .header__dropdown {
+    margin: 0 15px; /* Increased side margins */
+    padding: 5px 10px; /* Adding some padding */
+    line-height: 1.5; /* Adjusting line-height */
+  }
+
+  .header__link--purchase {
+    margin: 0 15px; /* Increased side margins */
+    padding: 10px 20px; /* Increased padding for button */
+    line-height: 1.5; /* Adjusting line-height */
+  }
+
+  .header__dropdown__menu {
+    max-height: none;            
   }
 }

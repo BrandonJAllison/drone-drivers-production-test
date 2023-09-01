@@ -251,7 +251,7 @@
 }
   
 .whatis-img {
-    flex: 1;
+    /* flex: 1; */
     display: flex;
     justify-content: center;
     border: 2px solid rgba(0, 0, 0, 0.1); /* Subtle border for the video */
@@ -259,10 +259,11 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
     border-radius: 10px; /* Rounded corners */
     background:black;
+    width:600px;
 }
 
 .whatis-img2 {
-  flex: 1;
+  /* flex: 1; */
   display: flex;
   justify-content: center;
   border: 2px solid rgba(0, 0, 0, 0.1); /* Subtle border for the video */
@@ -270,6 +271,7 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
   border-radius: 10px; /* Rounded corners */
   background:black;
+  width:600px;
 }
   
 .whatis-text {
