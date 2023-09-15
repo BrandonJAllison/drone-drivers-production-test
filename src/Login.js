@@ -33,7 +33,7 @@ const Login = () => {
       console.log("LOGIN RESPONSE", data);
       window.localStorage.setItem("user", JSON.stringify(data));
       dispatch({ type: "LOGIN", payload: data }); // Add this line
-      navigate("/");
+      navigate("/dashboard");
     } catch (err) {
       toast.error(err.response.data);
       setLoading(false);
