@@ -5,6 +5,7 @@
   }
   
   .sidebar {
+    background-color: #fff;
     width: 250px;
     border-right: 1px solid #ccc;
     padding: 20px;
@@ -145,6 +146,8 @@
   border-radius: 4px;
   font-weight: 500;
   outline: none;
+  position: fixed;
+ 
 }
 
 .toggleButton:hover {
@@ -155,4 +158,9 @@
   .toggleButton {
       display: block; /* Show button on mobile */
   }
+
+  .playerWrapper {
+    margin-top: -200px; /* Reducing space above the video player */
+  }
+
 }

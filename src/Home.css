@@ -140,80 +140,75 @@
   
   @media (max-width: 768px) {
 
-    .instuctor-text {
-      max-width: 95%;
-      text-align:center;
-      font-size: 1.2rem;
-      color: #333;
-      padding: 20px;
+    .home-header {
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .instuctor-text,
+    .whatis-text,
+    .whatis-text2 {
+        max-width: 95%;
+        text-align: center;
+        padding: 20px 0;
     }
 
     .whatis-text {
-      max-width: 95%;
-      font-size: 1rem;
-      color: #333;
-      padding: 0px;
-      margin-top:25px;
+        margin-top: 25px;
     }
 
     .whatis-text2 {
-      max-width: 95%;
-      font-size: 1rem;
-      color: #333;
-      padding: 0px;
-      margin-top:15px;
-      text-align:center;
+        margin-top: 15px;
     }
 
     .learn-description p {
-      max-width: 95%;
-      font-size: 1.2rem;
-      color: #333;
-      margin-bottom: 1.5rem;
+        max-width: 95%;
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 1.5rem;
     }
 
-    .logo_header{
-      display:none;
+    .logo_header {
+        display: none;
     }
 
-    .section-header{
-      font-size:30px;
+    .section-header {
+        font-size: 30px;
     }
 
-    .whatis-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      gap: 0px;
-    }
-
+    .whatis-section,
     .whatis-section2 {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
     }
 
-    .instructor-img {
-      max-width: 100%;
+    .instructor-img,
+    .whatis-img,
+    .whatis-img2 {
+        max-width: 100%;
+    }
+
+    .image-section img,
+    .learn-list ul {
+        max-width: 100%; /* Make sure images don't overflow the viewport width */
     }
 
     .learn-list ul {
-      list-style: none;
-      font-size: 1rem;
-      color: #333;
+        list-style: none;
+        font-size: 1rem;
+        color: #333;
     }
 
     .whatis-img, .whatis-img2 {
-      width: 400px;
-  }
+        width: 100%; /* Use 100% width for images so they adjust based on the viewport */
+        box-sizing: border-box; /* This ensures padding is included in the total width */
+    }
 
-    
-  }
+}
 
 
 

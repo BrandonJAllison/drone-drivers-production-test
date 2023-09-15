@@ -76,8 +76,8 @@ Don't just pass the Part 107 exam – excel on it. Enroll in our FAA Part 107 te
           <img className="logo_header" src='https://dronedriver-development-codebase.s3.amazonaws.com/images/logo-sm.png' height={50} width={50} alt="logo" /> WHAT'S INCLUDED
         </h1>
         <div className="whatis-section">
-          <div className="whatis-img2">
-            <img src={'https://dronedriver-development-codebase.s3.amazonaws.com/images/istockphoto-1094620200-612x612.jpg'} />
+          <div className="whatis-img">
+            <img className="whatis-img" src={'https://dronedriver-development-codebase.s3.amazonaws.com/images/istockphoto-1094620200-612x612.jpg'} />
           </div>
         <div className="whatis-text">
         <p>The FAA part 107 course is designed to provide comprehensive training to individuals interested in obtaining a commercial drone pilot license. The course includes detailed video lessons that cover all aspects of drone piloting, including regulations, airspace, weather, and safety protocols.</p>
