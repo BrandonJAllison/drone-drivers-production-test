@@ -8,7 +8,7 @@ const Landing = () => {
 
   return (
    
-    <div style={{display:"flex", alignItems:"center", flexDirection:"column", justifyContent:"center", height:"100vh", marginTop:"200px"}}>
+    <div style={{display:"flex", alignItems:"center", flexDirection:"column", justifyContent:"center", height:"100vh", marginTop:"100px"}}>
 
 <div class="logo">
             <img className="logo_header" src='https://dronedriver-development-codebase.s3.amazonaws.com/images/logo-sm.png' alt="drone driver "  />
