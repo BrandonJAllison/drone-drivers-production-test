@@ -14,6 +14,7 @@ import Privacy from './PrivacyPolicy';
 import CheckoutPage from './CheckoutPage';
 import SuccessPage from './SuccessPage';
 import TestLanding from './TestLanding'
+import Landing from './Landing'
 import ResourcesPage from './Resources'
 import UserProvider from './Usercontext';
 import { Elements } from '@stripe/react-stripe-js';
@@ -30,7 +31,7 @@ const App = () => {
         <Header />
         <Elements stripe={stripePromise}>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Landing/>} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login user={user} />} />
             <Route path="/course" element={<Course />} />

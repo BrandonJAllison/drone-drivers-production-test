@@ -147,6 +147,7 @@
   font-weight: 500;
   outline: none;
   position: fixed;
+  margin-top:100px;
  
 }
 
@@ -157,6 +158,7 @@
 @media (max-width: 768px) {
   .toggleButton {
       display: block; /* Show button on mobile */
+      
   }
 
   .playerWrapper {

@@ -49,7 +49,7 @@ const Course = () => {
 
     return (
         <>
-            <button className="toggleButton" onClick={() => setIsSidebarVisible(!isSidebarVisible)}>Menu</button>  {/* New Toggle Button */}
+            <button className="toggleButton" onClick={() => setIsSidebarVisible(!isSidebarVisible)}>Lessons</button>  {/* New Toggle Button */}
             {isCourseLocked ? (
                 <div className="lockedView">
                     <h1>This course is locked. Please purchase to unlock it.</h1>

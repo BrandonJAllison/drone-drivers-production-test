@@ -34,15 +34,15 @@ const Header = () => {
         </Link> */}
         {!user && (
           <>
-            <Link to="/register" className="header__link">
+            {/* <Link to="/register" className="header__link">
               Register
             </Link>
             <Link to="/login" className="header__link">
               Log in
-            </Link>
+            </Link> */}
           </>
         )}
-        {user &&  (
+        {/* {user &&  (
           <div className="header__dropdown">
             <Link to="#" className="header__link header__dropdown__toggle">
               My Drone Driver
@@ -66,12 +66,12 @@ const Header = () => {
               <button className="header__dropdown__button" onClick={handleLogout}>Logout</button>
             </div>
           </div>
-        )}
-        {showPurchaseButton && (
+        )} */}
+        {/* {showPurchaseButton && (
           <Link to="/checkout" className="header__link header__link--purchase" style={{ backgroundColor: '#006193' }}>
             Purchase Course
           </Link>
-        )}
+        )} */}
       </div>
     </header>
   );
