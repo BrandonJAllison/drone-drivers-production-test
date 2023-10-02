@@ -23,11 +23,11 @@ const Header = () => {
       <div className="header__left">
         <img src={Logo} alt="logo" className="logo1" />
       </div>
-      <label htmlFor="toggle" className="header__toggle">
+      {/* <label htmlFor="toggle" className="header__toggle">
         <span></span>
         <span></span>
         <span></span>
-      </label>
+      </label> */}
       <div className="header__right">
         {/* <Link to="/" className="header__link">
           Home
