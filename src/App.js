@@ -31,7 +31,7 @@ const App = () => {
         <Header />
         <Elements stripe={stripePromise}>
           <Routes>
-            <Route path="/" element={<Landing/>} />
+            <Route path="/" element={<Home/>} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login user={user} />} />
             <Route path="/course" element={<Course />} />
