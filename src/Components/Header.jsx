@@ -34,15 +34,15 @@ const Header = () => {
         </Link> */}
         {!user && (
           <>
-            <Link to="https://dronedriver.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=2uo368cpo2u9uqhc8n9vn5n0o8&redirect_uri=https://dronedriver.com/dashboard" className="header__link">
+            <Link to="https://dronedriver.auth.us-east-1.amazoncognito.com/login?client_id=2uo368cpo2u9uqhc8n9vn5n0o8&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fdronedriver.com%2Fdashboard" className="header__link">
               Login
             </Link>
-            {/* <Link to="/login" className="header__link">
-              Log in
+            {/* <Link to="/register" className="header__link">
+              Register
             </Link> */}
           </>
         )}
-        {user &&  (
+        
           <div className="header__dropdown">
             <Link to="#" className="header__link header__dropdown__toggle">
               My Drone Driver
@@ -66,7 +66,7 @@ const Header = () => {
               <button className="header__dropdown__button" onClick={handleLogout}>Logout</button>
             </div>
           </div>
-        )} 
+      
         {/* {showPurchaseButton && (
           <Link to="/checkout" className="header__link header__link--purchase" style={{ backgroundColor: '#006193' }}>
             Purchase Course

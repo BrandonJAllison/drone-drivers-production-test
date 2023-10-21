@@ -27,7 +27,7 @@ function Dashboard() {
       <div className="section">
         <h1>Membership</h1>
         <ul>
-          <li>You have a Paid Membership and is active from 04/13/2023</li>
+          <li>You have a Paid Membership and is active from </li>
         </ul>
       </div>
 

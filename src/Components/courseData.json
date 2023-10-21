@@ -13,8 +13,13 @@
         ],
         "quiz": [
           {
-            "question": "What is React?",
-            "options": ["A library", "A framework", "A language"],
+            "question": "What does FAA Part 107 regulate?",
+            "options": ["Commercial airline pilot requirements", "Maintenance of large aircraft", " Small Unmanned Aircraft Systems (sUAS) operations in the U.S. National Airspace System"],
+            "answer": 2
+          },
+          {
+            "question": "Which of the following requirements must an individual meet to obtain a Remote Pilot Certificate under FAA Part 107?",
+            "options": ["Be at least 16 years of age", "Hold a commercial pilot license", "Have a drivers license"],
             "answer": 0
           }
         ]

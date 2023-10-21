@@ -51,7 +51,7 @@ function Profile() {
         </>
       )}
 
-      {!user && (
+      {user && (
         <div className="section">
           <h1>Please log in to access your user profile</h1>
         </div>

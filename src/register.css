@@ -5,6 +5,7 @@
   flex-direction: column;
   height: 100vh;
   margin-top:-50px;
+  
 }
 
 .register-title {
@@ -15,7 +16,7 @@
 .register-form {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 15;
   align-items: center;
 }
 

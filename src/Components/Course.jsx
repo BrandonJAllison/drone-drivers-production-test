@@ -2,30 +2,29 @@ import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 import courseData from './courseData.json';
 import './Course.css';
+import Quiz from './Quiz';
 
 const Course = () => {
-    
     const [currentChapter, setCurrentChapter] = useState(0);
     const [currentSubChapter, setCurrentSubChapter] = useState(0);
     const [showQuiz, setShowQuiz] = useState(false);
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [result, setResult] = useState(null);
     const [isCourseLocked, setIsCourseLocked] = useState(false);
-    const [isSidebarVisible, setIsSidebarVisible] = useState(false);  // New state
+    const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
     const currentCourse = courseData.chapters[currentChapter];
     const currentSubCourse = currentCourse.subChapters[currentSubChapter];
 
-    const totalSubChapters = courseData.chapters.reduce((sum, chapter) => sum + chapter.subChapters.length, 0);
-    const progress = ((courseData.chapters.slice(0, currentChapter).reduce((sum, chapter) => sum + chapter.subChapters.length, 0)) + currentSubChapter) / totalSubChapters * 100;
+    const handleOpenQuiz = () => {
+        setShowQuiz(true);
+    }
 
-    const handleQuizSubmit = () => {
-        if (selectedAnswer === currentCourse.quiz[0].answer) {
-            setResult('Correct!');
-        } else {
-            setResult('Incorrect. Try again!');
-        }
-    };
+    const handleCloseQuiz = () => {
+        setShowQuiz(false);
+        setSelectedAnswer(null);
+        setResult(null);
+    }
 
     const handleChapterSelection = (chapterIndex, subChapterIndex) => {
         setCurrentChapter(chapterIndex);
@@ -42,14 +41,11 @@ const Course = () => {
             setCurrentChapter(currentChapter + 1);
             setCurrentSubChapter(0);
         }
-        setShowQuiz(false);
-        setResult(null);
-        setSelectedAnswer(null);
     };
 
     return (
         <>
-            <button className="toggleButton" onClick={() => setIsSidebarVisible(!isSidebarVisible)}>Lessons</button>  {/* New Toggle Button */}
+            <button className="toggleButton" onClick={() => setIsSidebarVisible(!isSidebarVisible)}>Lessons</button>
             {isCourseLocked ? (
                 <div className="lockedView">
                     <h1>This course is locked. Please purchase to unlock it.</h1>
@@ -86,6 +82,14 @@ const Course = () => {
                             />
                         </div>
                         <div className="description">{currentSubCourse.description}</div>
+                        {!showQuiz ?
+                            <button className="quizButton" onClick={handleOpenQuiz}>Open Quiz</button>
+                            :
+                            <>
+                                <button className="quizButton closeQuizButton" onClick={handleCloseQuiz}>Close Quiz</button>
+                                <Quiz quizData={currentCourse.quiz} />
+                            </>
+                        }
                     </div>
                 </div>
             )}
