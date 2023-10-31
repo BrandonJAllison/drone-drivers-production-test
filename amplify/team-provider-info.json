@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dronedriverclientapp-dev-95002-authRole",
+      "UnauthRoleArn": "arn:aws:iam::922474061073:role/amplify-dronedriverclientapp-dev-95002-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::922474061073:role/amplify-dronedriverclientapp-dev-95002-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-dronedriverclientapp-dev-95002-deployment",
+      "UnauthRoleName": "amplify-dronedriverclientapp-dev-95002-unauthRole",
+      "StackName": "amplify-dronedriverclientapp-dev-95002",
+      "StackId": "arn:aws:cloudformation:us-east-1:922474061073:stack/amplify-dronedriverclientapp-dev-95002/659c6d20-77f4-11ee-bc81-0e8b1aee6755",
+      "AmplifyAppId": "dvi0vb42ql5et"
+    },
+    "categories": {
+      "api": {
+        "dronedriverclientapp": {}
+      }
+    }
+  }
+}

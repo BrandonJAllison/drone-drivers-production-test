@@ -10,7 +10,7 @@ const CheckoutPage = () => {
     event.preventDefault();
     setLoading(true);
 
-    const amount = 25 * 100; // $25.00 in cents
+    const amount = 125 * 100; // $125.00 in cents
 
     try {
       // Call your server to create the Checkout Session
