@@ -1,13 +1,18 @@
 {
   "api": {
-    "dronedriverclientapp": {
+    "dronedriversproduction": {
       "dependsOn": [],
       "output": {
         "authConfig": {
-          "additionalAuthenticationProviders": [],
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ],
           "defaultAuthentication": {
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
             },
             "authenticationType": "API_KEY"
           }
@@ -15,6 +20,49 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
+    }
+  },
+  "auth": {
+    "dronedriversproducti": {
+      "customAuth": false,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "imported"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_auth_dronedriversproducti_nativeClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "dronedriversproducti"
+        }
+      ]
+    },
+    "AMPLIFY_auth_dronedriversproducti_userPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "dronedriversproducti"
+        }
+      ]
+    },
+    "AMPLIFY_auth_dronedriversproducti_userPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "dronedriversproducti"
+        }
+      ]
+    },
+    "AMPLIFY_auth_dronedriversproducti_webClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "dronedriversproducti"
+        }
+      ]
     }
   }
 }
