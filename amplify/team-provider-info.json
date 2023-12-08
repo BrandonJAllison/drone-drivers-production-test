@@ -10,6 +10,17 @@
       "StackName": "amplify-amplify837fde7771d64-staging-170841",
       "StackId": "arn:aws:cloudformation:us-east-1:022666580156:stack/amplify-amplify837fde7771d64-staging-170841/6fd3dc40-95ec-11ee-b849-123963f5555d",
       "AmplifyAppId": "d2ydoo9cs68u75"
+    },
+    "categories": {
+      "auth": {
+        "dronedriversproductiontest": {}
+      },
+      "function": {
+        "dronedriversproducti9f914a36": {
+          "deploymentBucketName": "amplify-amplify837fde7771d64-staging-170841-deployment",
+          "s3Key": "amplify-builds/dronedriversproducti9f914a36-6b476d7332384834476d-build.zip"
+        }
+      }
     }
   }
 }
