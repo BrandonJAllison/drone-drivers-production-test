@@ -10,6 +10,14 @@
       "StackName": "amplify-amplify4c8d50517e9a4-staging-160035",
       "StackId": "arn:aws:cloudformation:us-east-1:022666580156:stack/amplify-amplify4c8d50517e9a4-staging-160035/a0c75920-7806-11ee-8fc9-126dc60b95b3",
       "AmplifyAppId": "dnw5ne7pn2wzn"
+    },
+    "categories": {
+      "auth": {
+        "dronedriversproducti": {}
+      },
+      "function": {
+        "dronedriversproducti33a4f72d": {}
+      }
     }
   }
 }

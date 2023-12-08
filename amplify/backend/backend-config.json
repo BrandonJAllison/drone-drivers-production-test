@@ -30,5 +30,12 @@
       "service": "Cognito",
       "serviceType": "imported"
     }
+  },
+  "function": {
+    "dronedriversproducti33a4f72d": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
   }
 }
