@@ -19,23 +19,31 @@ import ResourcesPage from './Resources'
 import UserProvider from './Usercontext';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react';
+import awsExports from "./aws-exports";
+import { Amplify, API, graphqlOperation } from 'aws-amplify'
+import '@aws-amplify/ui-react/styles.css';
+Amplify.configure(awsExports);
+
 
 const stripePromise = loadStripe('pk_test_51MfvqQDhepDNpjvlblpLJD3CDsz8alCnx1RIMlh0ZKh7eh0F2clKaGZmz5cOd6IFahiD8XZCObKUQy1qZWRf2pbA00ur8VklUb');
 
-const App = () => {
-  const [user, setUser] = useState(null);
+const App = ({ signOut, user }) => {
+ 
+  console.log(user.username);
+
 
   return (
     <BrowserRouter>
-      <UserProvider value={{ user, setUser }}>
-        <Header />
+      <UserProvider value={{user}}>
+        <Header user={user} signOut={signOut}/>
         <Elements stripe={stripePromise}>
           <Routes>
             <Route path="/" element={<Home/>} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login user={user} />} />
+            {/* <Route path="/register" element={<Register />} /> */}
+            {/* <Route path="/login" element={<Login user={user} />} /> */}
             <Route path="/course" element={<Course />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard  />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/practice-test" element={<Test />} />
             <Route path="/privacy-policy" element={<Privacy />} />
@@ -51,4 +59,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default withAuthenticator(App);

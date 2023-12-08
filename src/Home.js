@@ -14,6 +14,57 @@ import './login.css'; // or the path to the styles you need for this section
 
 const Home = () => {
 
+  //   // List all items
+  //   async function getUserByEmail(email) {
+  //     try {
+  //         const users = await DataStore.query(Users, user => user.email.eq(email));
+          
+  //         if (users.length > 0) {
+  //             console.log(users[0]);
+  //         } else {
+  //             console.log('User not found.');
+  //         }
+  //     } catch (error) {
+  //         console.error('Error querying user:', error);
+  //     }
+  // }
+  
+  // // Call the function with the desired user's email
+  // getUserByEmail('cupocode@gmail.com');
+
+//   async function fetchUsers() {
+//     try {
+//         const models = await DataStore.query(Users);
+//         console.log(models);
+//     } catch (error) {
+//         console.error("Error querying Users:", error);
+//     }
+// }
+
+// fetchUsers();
+
+//   async function saveUser() {
+//     try {
+//         await DataStore.save(
+//             new Users({
+//                 "email": "Lorem ipsum dolor sit amet",
+//                 "firstName": "Lorem ipsum dolor sit amet",
+//                 "lastName": "Lorem ipsum dolor sit amet",
+//                 "registrationDate": "1970-01-01Z",
+//                 "purchased": "Lorem ipsum dolor sit amet",
+//                 "untitledfield": "Lorem ipsum dolor sit amet"
+//             })
+//         );
+//         console.log('User saved successfully.');
+//     } catch (error) {
+//         console.error('Error saving user:', error);
+//     }
+// }
+
+// saveUser();
+    
+   
+
     const [cookies, setCookie] = useCookies(["myWebsiteCookieConsent"]);
 
     function handleAccept() {

@@ -1,9 +1,11 @@
-type Users @model @auth(rules: [{allow: public}]) {
+type UserModel @model @auth(rules: [{allow: public}]) {
   id: ID!
-  email: String
   firstName: String
   lastName: String
-  registrationDate: AWSDate
-  purchased: String
-  untitledfield: String
+  email: AWSEmail
+  phone: AWSPhone
+  timeCreated: AWSTimestamp
+  dateCreated: AWSDate
+  city: String
+  country: String
 }

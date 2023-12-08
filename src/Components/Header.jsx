@@ -3,23 +3,30 @@ import './Header.css';
 import Logo from './logo-txt-sm.png';
 import { useNavigate } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../Usercontext';
+// import { UserContext } from '../Usercontext';
+import { Amplify, Auth } from 'aws-amplify';
+import awsconfig from '../aws-exports';
+Amplify.configure(awsconfig);
 
-const Header = () => {
+const Header = ( { signOut, user }) => {
+  
+  
+  
   const navigate = useNavigate();
-  const { state, dispatch } = useContext(UserContext);
-  const { user } = state;
-  const [showPurchaseButton, setShowPurchaseButton] = useState(true);
+  // const { user, dispatch } = useContext(UserContext);
 
-  const handleLogout = () => {
-    window.localStorage.removeItem('user');
-    dispatch({ type: 'LOGOUT' }); // Dispatch "LOGOUT" action
-    navigate('/login');
-  };
+  // const [showPurchaseButton, setShowPurchaseButton] = useState(true);
+
+  // const handleLogout = () => {
+  //   window.localStorage.removeItem('user');
+  //   dispatch({ type: 'LOGOUT' }); // Dispatch "LOGOUT" action
+  //   navigate('/login');
+  // };
 
   return (
     <header className="header">
       <input type="checkbox" id="toggle" style={{display: "none"}} />
+      <p>Hello {user.username}</p>
       <div className="header__left">
         <img src={Logo} alt="logo" className="logo1" />
       </div>
@@ -29,20 +36,7 @@ const Header = () => {
         <span></span>
       </label>
       <div className="header__right">
-        {/* <Link to="/" className="header__link">
-          Home
-        </Link> */}
-        {!user && (
-          <>
-            <Link to="https://dronedriver.auth.us-east-1.amazoncognito.com/login?client_id=2uo368cpo2u9uqhc8n9vn5n0o8&response_type=code&scope=email+openid+phone&redirect_uri=https%3A%2F%2Fdronedriver.com%2Fdashboard" className="header__link">
-              Login
-            </Link>
-            {/* <Link to="/register" className="header__link">
-              Register
-            </Link> */}
-          </>
-        )}
-        
+     
           <div className="header__dropdown">
             <Link to="#" className="header__link header__dropdown__toggle">
               My Drone Driver
@@ -63,7 +57,8 @@ const Header = () => {
               <Link to="/resources" className="header__dropdown__item">
                 Resources
               </Link>
-              <button className="header__dropdown__button" onClick={handleLogout}>Logout</button>
+              <button className="header__dropdown__button" onClick={signOut}>Logout</button> 
+              
             </div>
           </div>
       
