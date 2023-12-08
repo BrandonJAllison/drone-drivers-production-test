@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import './App.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import Register from './Register';
-import Login from './Login';
-import Home from './Home';
+// import Register from './Register';
+// import Login from './Login';
+// import Home from './Home';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Course from './Components/Course';
@@ -14,7 +14,7 @@ import Privacy from './PrivacyPolicy';
 import CheckoutPage from './CheckoutPage';
 import SuccessPage from './SuccessPage';
 import TestLanding from './TestLanding'
-import Landing from './Landing'
+// import Landing from './Landing'
 import ResourcesPage from './Resources'
 import UserProvider from './Usercontext';
 import { Elements } from '@stripe/react-stripe-js';
@@ -39,11 +39,11 @@ const App = ({ signOut, user }) => {
         <Header user={user} signOut={signOut}/>
         <Elements stripe={stripePromise}>
           <Routes>
-            <Route path="/" element={<Home/>} />
+            {/* <Route path="/" element={<Home/>} /> */}
             {/* <Route path="/register" element={<Register />} /> */}
             {/* <Route path="/login" element={<Login user={user} />} /> */}
-            <Route path="/course" element={<Course />} />
             <Route path="/dashboard" element={<Dashboard  />} />
+            <Route path="/course" element={<Course />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/practice-test" element={<Test />} />
             <Route path="/privacy-policy" element={<Privacy />} />

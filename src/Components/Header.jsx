@@ -26,7 +26,7 @@ const Header = ( { signOut, user }) => {
   return (
     <header className="header">
       <input type="checkbox" id="toggle" style={{display: "none"}} />
-      <p>Hello {user.username}</p>
+      <p>Welcome back, {user.attributes.name}!</p>
       <div className="header__left">
         <img src={Logo} alt="logo" className="logo1" />
       </div>
