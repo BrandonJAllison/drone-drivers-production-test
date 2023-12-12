@@ -5,7 +5,7 @@ exports.handler = async (event) => {
     let date = new Date();
 
     const params = {
-        TableName: DroneDriversUserTable,
+        TableName: 'DroneDriversUserTable',
         Item: {
             'id': event.request.userAttributes.sub,
             'email': event.request.userAttributes.email,
