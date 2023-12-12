@@ -1,0 +1,12 @@
+{
+  "resourceName": "usersDroneDriver",
+  "tableName": "usersDroneDriver",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "number"
+  },
+  "gsi": [],
+  "triggerFunctions": [
+    "usersDroneDriverTrigger46960f76"
+  ]
+}

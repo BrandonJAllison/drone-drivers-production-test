@@ -38,6 +38,22 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "usersDroneDriverTrigger46960f76": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "usersDroneDriver"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "parameters": {
@@ -56,6 +72,28 @@
           "resourceName": "dronedriversproducti9f914a36"
         }
       ]
+    },
+    "AMPLIFY_function_usersDroneDriverTrigger46960f76_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "usersDroneDriverTrigger46960f76"
+        }
+      ]
+    },
+    "AMPLIFY_function_usersDroneDriverTrigger46960f76_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "usersDroneDriverTrigger46960f76"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "usersDroneDriver": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
     }
   }
 }
