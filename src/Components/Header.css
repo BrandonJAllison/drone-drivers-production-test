@@ -189,4 +189,24 @@
   .header__dropdown__menu {
     max-height: none;            
   }
+
+  .lock-icon {
+    margin-left: 5px;
+    color: #ff0000; /* Example color for the lock icon */
+  }
+  
+  .lock-message {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    z-index: 1000;
+  }
+  
 }

@@ -1,16 +1,33 @@
 .profile-container {
   /* Styles for the profile container */
-  /* Add any general styles for the profile container here */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .section {
   /* Styles for each section within the profile */
-  margin-bottom: 20px; /* Example: Adds spacing between sections */
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Styling specifically for the 'My Information' section to resemble an ID card */
+.info-card {
+  border: 1px solid #ddd; /* Light grey border */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Inner spacing */
+  background-color: #f9f9f9; /* Light background color */
+  max-width: 700px; /* Limiting width of the card */
+  margin: 0 auto 20px; /* Centering the card and adding margin at the bottom */
 }
 
 .info-label {
   /* Styles for the labels in the information section */
-  font-weight: bold; /* Example: Makes label text bold */
+  font-weight: bold;
+  display: block; /* Makes each label a block element */
+  margin-bottom: 5px; /* Spacing below each label */
 }
 
 /* Styling for the course section */
@@ -49,23 +66,22 @@
 
 /* Lock icon styling */
 .lock-icon {
-  font-size: 24px; /* Adjust the size of the lock icon */
-  color: white; /* Example: Sets the color of the lock icon */
+  font-size: 24px;
+  color: white;
 }
 
 /* Purchase button styling */
 .purchase-button {
-  /* Style your purchase button */
-  padding: 10px 20px; /* Example: Adds padding to the button */
-  margin-top: 10px; /* Example: Adds margin above the button */
-  background-color: #007bff; /* Example: Sets button background color */
-  color: white; /* Example: Sets button text color */
-  border: none; /* Example: Removes border from the button */
-  border-radius: 5px; /* Example: Rounds the corners of the button */
-  cursor: pointer; /* Changes the cursor to a pointer on hover */
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .purchase-button:hover {
-  background-color: #0056b3; /* Darkens the button on hover */
+  background-color: #0056b3;
 }

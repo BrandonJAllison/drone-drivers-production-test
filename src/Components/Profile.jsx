@@ -4,31 +4,30 @@ import "./Profile.css";
 
 const Profile = ({ user, signout }) => {
   const hasPaid = user?.hasPaidForFAAPart107;
-  console.log(user.attributes)
 
   return (
     <div className="profile-container">
       {user && (
         <>
-          <div className="section">
+          <div className="section info-card">
             <h1>My Information</h1>
            
             <ul>
               <li>
                 <span className="info-label">Name:  </span>
-                {user.attributes.name} 
+                {user.attributes.name}
               </li>
               <li>
-                <span className="info-label">Username:  </span> {user.attributes.preferred_username}
+                <span className="info-label">Username:</span> {user.attributes.preferred_username}
               </li>
               <li>
-                <span className="info-label">Email:  </span> {user.attributes.email}
+                <span className="info-label">Email:</span> {user.attributes.email}
               </li>
             </ul>
           </div>
 
           <div className="section">
-            <h1>My Courses</h1>
+            <h1>Courses</h1>
             <div className="course">
               <img 
                 src="https://dronedriver.com/wp-content/uploads/2023/11/part-107-card.png"
@@ -44,7 +43,13 @@ const Profile = ({ user, signout }) => {
             </div>
           </div>
 
-          {/* ... other sections ... */}
+          <div className="section">
+            <h1>Test Scores</h1>
+            <div className="scores">
+              <h4>You Have No Test Scores To Display</h4>
+            </div>
+          </div>
+
         </>
       )}
     </div>
