@@ -1,62 +1,71 @@
-/* .profile-container {
-    display: flex;
-    flex-direction: column;
-    height: 80vh;
-    justify-content: flex-start;
-    padding: 20px;
-    background-color: #f2f2f2;
-    
-  }
-  
-  .section {
-    background-color: #fff;
-    padding: 20px 200px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    height:90vh;
-  } */
+.profile-container {
+  /* Styles for the profile container */
+  /* Add any general styles for the profile container here */
+}
 
-  .profile-container {
-    margin: 20px;
-  }
-  
-  .section {
-    margin-bottom: 30px;
-  }
-  
-  .section h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .section ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .section ul li {
-    font-size: 16px;
-    margin: 5px 0;
-  }
-  
-  .info-label {
-    font-weight: bold;
-  }
-  
-  /* Adjust styles for mobile devices */
-  @media (max-width: 768px) {
-    .section {
-      margin-bottom: 20px;
-    }
-  
-    .section h1 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-  
-    .section ul li {
-      font-size: 14px;
-      margin: 4px 0;
-    }
-  }
+.section {
+  /* Styles for each section within the profile */
+  margin-bottom: 20px; /* Example: Adds spacing between sections */
+}
+
+.info-label {
+  /* Styles for the labels in the information section */
+  font-weight: bold; /* Example: Makes label text bold */
+}
+
+/* Styling for the course section */
+.course {
+  position: relative;
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  margin-bottom: 20px; /* Adds spacing below the course section */
+}
+
+/* Styles for the course image */
+.course-image {
+  width: 100%; /* Set image size to half of its container */
+  transition: filter 0.3s ease; /* Smooth transition for filter */
+}
+
+/* Apply grayscale filter when the course is locked */
+.locked-image {
+  filter: grayscale(100%); /* Black and white filter */
+}
+
+/* Overlay styling for locked courses */
+.locked-course {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Lock icon styling */
+.lock-icon {
+  font-size: 24px; /* Adjust the size of the lock icon */
+  color: white; /* Example: Sets the color of the lock icon */
+}
+
+/* Purchase button styling */
+.purchase-button {
+  /* Style your purchase button */
+  padding: 10px 20px; /* Example: Adds padding to the button */
+  margin-top: 10px; /* Example: Adds margin above the button */
+  background-color: #007bff; /* Example: Sets button background color */
+  color: white; /* Example: Sets button text color */
+  border: none; /* Example: Removes border from the button */
+  border-radius: 5px; /* Example: Rounds the corners of the button */
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.purchase-button:hover {
+  background-color: #0056b3; /* Darkens the button on hover */
+}

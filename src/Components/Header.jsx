@@ -42,9 +42,9 @@ const Header = ( { signOut, user }) => {
               My Drone Driver
             </Link>
             <div className="header__dropdown__menu">
-              <Link to="/dashboard" className="header__dropdown__item">
+              {/* <Link to="/dashboard" className="header__dropdown__item">
                 Dashboard
-              </Link>
+              </Link> */}
               <Link to="/profile" className="header__dropdown__item">
                 Profile
               </Link>
