@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import { UserContext } from "../Usercontext";
 import "./Profile.css";
 
-function Profile() {
-  const { state } = useContext(UserContext);
-  const { user } = state;
+const Profile = ( user ) => {
+  // const { state } = useContext(UserContext);
+  // const { user } = state;
 
   return (
     <div className="profile-container">
@@ -13,6 +13,7 @@ function Profile() {
          
       <div className="section">
         <h1>My Information</h1>
+        <p>Welcome back, {user.attributes.name}!</p>
         <ul>
               <li>
                 <span className="info-label">Name:</span>{" "}
