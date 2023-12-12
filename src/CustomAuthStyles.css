@@ -1,0 +1,28 @@
+.amplify-button {
+    background-color: #006192;
+}
+
+.amplify-form-container {
+    margin: 40px;  /* Adds 40px margin on all sides */
+    /* Other custom styles if needed */
+}
+
+/* Style for the active tab item */
+.amplify-tab-item__active {
+    color: black; /* Sets text color to black */
+}
+
+/* If needed, you can also style the hover state */
+.amplify-tab-item:hover {
+    color: black; /* Optional: Sets text color to black on hover */
+}
+
+form{
+    width: auto !important;
+    box-shadow:none !important;
+
+}
+
+.amplify-button{
+    color:white!important;
+}

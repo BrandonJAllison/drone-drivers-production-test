@@ -23,10 +23,17 @@ import { withAuthenticator, Button, Heading } from '@aws-amplify/ui-react';
 import awsExports from "./aws-exports";
 import { Amplify, API, graphqlOperation } from 'aws-amplify'
 import '@aws-amplify/ui-react/styles.css';
+import './CustomAuthStyles.css'; 
 Amplify.configure(awsExports);
 
 
 const stripePromise = loadStripe('pk_test_51MfvqQDhepDNpjvlblpLJD3CDsz8alCnx1RIMlh0ZKh7eh0F2clKaGZmz5cOd6IFahiD8XZCObKUQy1qZWRf2pbA00ur8VklUb');
+
+const MyCustomHeader = () => (
+  <div style={{ backgroundColor: 'red', padding: '20px' }}>
+    <p>Header Test</p>
+  </div>
+);
 
 const App = ({ signOut, user }) => {
  
@@ -59,4 +66,8 @@ const App = ({ signOut, user }) => {
   );
 };
 
-export default withAuthenticator(App);
+export default withAuthenticator(App, {
+  includeGreetings: true,
+  authenticatorComponents: [MyCustomHeader],
+  // other configuration...
+});
