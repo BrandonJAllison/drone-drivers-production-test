@@ -51,7 +51,7 @@ const App = ({ signOut, user }) => {
             {/* <Route path="/login" element={<Login user={user} />} /> */}
             <Route path="/dashboard" element={<Dashboard  />} />
             <Route path="/course" element={<Course />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/" element={<Profile user={user} />} />
             <Route path="/practice-test" element={<Test />} />
             <Route path="/privacy-policy" element={<Privacy />} />
             <Route path="/checkout" element={<CheckoutPage />} />

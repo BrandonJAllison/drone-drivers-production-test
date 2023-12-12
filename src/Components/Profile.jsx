@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { UserContext } from "../Usercontext";
 import "./Profile.css";
 
-const Profile = ( user ) => {
+const Profile = ( {user, signout} ) => {
   // const { state } = useContext(UserContext);
   // const { user } = state;
 
@@ -52,11 +52,6 @@ const Profile = ( user ) => {
         </>
       )}
 
-      {user && (
-        <div className="section">
-          <h1>Please log in to access your user profile</h1>
-        </div>
-      )}
     </div>
   );
 }
