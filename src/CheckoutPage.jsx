@@ -10,11 +10,11 @@ const CheckoutPage = () => {
     event.preventDefault();
     setLoading(true);
 
-    const amount = 125 * 100; // $125.00 in cents
+    const amount = 139 * 100; // $125.00 in cents
 
     try {
       // Call your server to create the Checkout Session
-      const response = await fetch('https://sea-turtle-app-l7rbe.ondigitalocean.app/api/create-checkout-session', {
+      const response = await fetch('https://app.dronedriver.com/api/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const CheckoutPage = () => {
         <h3>Get the Drone Drivers Course Today!</h3>
         <p>You will be redirected to a Stripe page to process payment. Once successfully checked out you will be brough back to the drone driver app and your course material and practice tests will be unlocked.</p>
         <form onSubmit={handleSubmit}>
-          <p>Amount: $25.00</p>
+          <p>Amount: $139.00</p>
           <button type="submit" disabled={!stripe || loading}>
             {loading ? 'Processing...' : 'Buy The Course'}
           </button>

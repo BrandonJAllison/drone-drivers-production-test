@@ -1,9 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useHistory from react-router-dom
 import { UserContext } from "../Usercontext";
 import "./Profile.css";
 
 const Profile = ({ user, signout }) => {
+  const navigate = useNavigate(); // Create an instance of useHistory
   const hasPaid = user?.hasPaidForFAAPart107;
+
+  // Function to handle the click on the purchase button
+  const handlePurchaseClick = () => {
+    navigate('/checkout'); // Correctly use navigate to go to /checkout
+  };
 
   return (
     <div className="profile-container">
@@ -37,7 +44,10 @@ const Profile = ({ user, signout }) => {
               {!hasPaid && (
                 <div className="locked-course">
                   <span className="lock-icon">🔒</span>
-                  <button className="purchase-button">Purchase Course</button>
+                  {/* Add the onClick event handler to the button */}
+                  <button className="purchase-button" onClick={handlePurchaseClick}>
+                    Purchase Course
+                  </button>
                 </div>
               )}
             </div>
