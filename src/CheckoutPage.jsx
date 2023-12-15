@@ -14,7 +14,7 @@ const CheckoutPage = () => {
 
     try {
       // Call your server to create the Checkout Session
-      const response = await fetch('https://app.dronedriver.com/api/create-checkout-session', {
+      const response = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
