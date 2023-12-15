@@ -10,11 +10,11 @@ const CheckoutPage = () => {
     event.preventDefault();
     setLoading(true);
 
-    const amount = 139 * 100; // $125.00 in cents
+    const amount = 139 * 100; // $139.00 in cents
 
     try {
       // Call your server to create the Checkout Session
-      const response = await fetch('/api/create-checkout-session', {
+      const response = await fetch('https://esozdrff6u4rkbkupqpvw7kyly0opaua.lambda-url.us-east-1.on.aws/ ', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
