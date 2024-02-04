@@ -15,7 +15,7 @@ exports.handler = async (event) => {
         quantity: 1,
       }],
       mode: 'payment',
-      success_url: 'https://app.dronedriver.com/course',
+      success_url: 'https://app.dronedriver.com/SuccessPage',
       cancel_url: 'https://app.dronedriver.com/cancel',
     });
 

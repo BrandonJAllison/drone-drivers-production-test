@@ -1,4 +1,28 @@
 {
+  "master": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dronedriversproducti-master-00126-authRole",
+      "UnauthRoleArn": "arn:aws:iam::022666580156:role/amplify-dronedriversproducti-master-00126-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::022666580156:role/amplify-dronedriversproducti-master-00126-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-dronedriversproducti-master-00126-deployment",
+      "UnauthRoleName": "amplify-dronedriversproducti-master-00126-unauthRole",
+      "StackName": "amplify-dronedriversproducti-master-00126",
+      "StackId": "arn:aws:cloudformation:us-east-1:022666580156:stack/amplify-dronedriversproducti-master-00126/9823a4e0-9881-11ee-ba50-123a56ce31a7",
+      "AmplifyAppId": "d2ydoo9cs68u75"
+    },
+    "categories": {
+      "auth": {
+        "dronedriversproductiontest": {}
+      },
+      "function": {
+        "dronedriversproducti9f914a36": {
+          "deploymentBucketName": "amplify-dronedriversproducti-master-00126-deployment",
+          "s3Key": "amplify-builds/dronedriversproducti9f914a36-51557279714c42666c4e-build.zip"
+        }
+      }
+    }
+  },
   "staging": {
     "awscloudformation": {
       "AuthRoleName": "amplify-amplify837fde7771d64-staging-170841-authRole",
@@ -26,11 +50,11 @@
         },
         "stripecheckout": {
           "deploymentBucketName": "amplify-amplify837fde7771d64-staging-170841-deployment",
-          "s3Key": "amplify-builds/stripecheckout-326b566a366371676e77-build.zip"
+          "s3Key": "amplify-builds/stripecheckout-36564b2b413439582f67-build.zip"
         },
         "stipechekout": {
           "deploymentBucketName": "amplify-amplify837fde7771d64-staging-170841-deployment",
-          "s3Key": "amplify-builds/stipechekout-6b792b495543366c6c4c-build.zip"
+          "s3Key": "amplify-builds/stipechekout-6a79616271454f657258-build.zip"
         }
       },
       "storage": {
