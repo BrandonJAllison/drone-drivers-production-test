@@ -1,4 +1,20 @@
 {
+  "api": {
+    "stripecheckoutapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "stripefunction"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
   "auth": {
     "dronedriversproductiontest": {
       "customAuth": false,
@@ -38,6 +54,12 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "stripefunction": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "parameters": {
@@ -54,6 +76,22 @@
         {
           "category": "function",
           "resourceName": "dronedriversproducti9f914a36"
+        }
+      ]
+    },
+    "AMPLIFY_function_stripefunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripefunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_stripefunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripefunction"
         }
       ]
     }

@@ -3,7 +3,7 @@ import { API } from 'aws-amplify';
 import { loadStripe } from '@stripe/stripe-js';
 
 // Replace with your Stripe public key
-const stripePromise = loadStripe('pk_test_YourPublishableKeyHere');
+const stripePromise = loadStripe('pk_live_51MfvqQDhepDNpjvlkGXy2CHrtwAt7sox7g3KfZgod8Yix0EnUl8yr0GDCiguHNUZXSqFhdFRA2uuxq05rcJDfhKV00I8Nt9TrZ');
 
 const CheckoutButton = () => {
   const handleClick = async () => {
@@ -12,7 +12,7 @@ const CheckoutButton = () => {
 
     try {
       // Call your Amplify backend to create the Checkout session
-      const session = await API.post('stripe', '/stripecheckout', {
+      const session = await API.post('stripecheckoutapi', '/stripefunction', {
         body: {}, // any required body content
       });
 
