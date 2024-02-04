@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useHistory from react-router-dom
 import { UserContext } from "../Usercontext";
 import "./Profile.css";
+import CheckoutButton from '../checkoutbutton.jsx';
 
 const Profile = ({ user, signout }) => {
   const navigate = useNavigate(); // Create an instance of useHistory
@@ -45,9 +46,7 @@ const Profile = ({ user, signout }) => {
                 <div className="locked-course">
                   <span className="lock-icon">🔒</span>
                   {/* Add the onClick event handler to the button */}
-                  <button className="purchase-button" onClick={handlePurchaseClick}>
-                    Purchase Course
-                  </button>
+                  <CheckoutButton />
                 </div>
               )}
             </div>

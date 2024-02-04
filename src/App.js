@@ -11,7 +11,7 @@ import Dashboard from './Components/Dashboard';
 import Profile from './Components/Profile';
 import Test from './Testing';
 import Privacy from './PrivacyPolicy';
-import CheckoutPage from './CheckoutPage';
+// import CheckoutPage from './CheckoutPage';
 import SuccessPage from './SuccessPage';
 import TestLanding from './TestLanding'
 // import Landing from './Landing'
@@ -54,7 +54,7 @@ const App = ({ signOut, user }) => {
             <Route path="/" element={<Profile user={user} />} />
             <Route path="/practice-test" element={<Test />} />
             <Route path="/privacy-policy" element={<Privacy />} />
-            <Route path="/checkout" element={<CheckoutPage />} />
+            {/* <Route path="/checkout" element={<CheckoutPage />} /> */}
             <Route path="/success" element={<SuccessPage />} />
             <Route path="/test-landing" element={<TestLanding />} />
             <Route path="/resources" element={<ResourcesPage />} />

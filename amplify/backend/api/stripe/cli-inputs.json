@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/stripecheckout": {
+      "name": "/stripecheckout",
+      "lambdaFunction": "stripecheckout",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
