@@ -23,10 +23,15 @@
         "stripefunction": {
           "deploymentBucketName": "amplify-dronedriversproducti-master-00126-deployment",
           "s3Key": "amplify-builds/stripefunction-486e4c49327669312b66-build.zip"
+        },
+        "testingdd": {
+          "deploymentBucketName": "amplify-dronedriversproducti-master-00126-deployment",
+          "s3Key": "amplify-builds/testingdd-62377a50597170414f6d-build.zip"
         }
       },
       "api": {
-        "stripecheckoutapi": {}
+        "stripecheckoutapi": {},
+        "testing": {}
       }
     }
   },

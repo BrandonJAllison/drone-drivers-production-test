@@ -13,6 +13,20 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "API Gateway"
+    },
+    "testing": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "testingdd"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
     }
   },
   "auth": {
@@ -60,6 +74,11 @@
       "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "testingdd": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "parameters": {
@@ -92,6 +111,22 @@
         {
           "category": "function",
           "resourceName": "stripefunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_testingdd_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testingdd"
+        }
+      ]
+    },
+    "AMPLIFY_function_testingdd_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testingdd"
         }
       ]
     }
