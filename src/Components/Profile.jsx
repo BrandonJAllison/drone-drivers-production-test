@@ -5,6 +5,7 @@ import "./Profile.css";
 import CheckoutButton from '../checkoutbutton.jsx';
 
 const Profile = ({ user, signout }) => {
+  console.log('REACT_APP_TEST_VARIABLE', process.env.REACT_APP_TEST_VARIABLE);
   const navigate = useNavigate(); // Create an instance of useHistory
   const hasPaid = user?.hasPaidForFAAPart107;
 
