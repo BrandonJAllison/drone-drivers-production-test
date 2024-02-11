@@ -1,29 +1,45 @@
 import React from 'react';
-import { API } from 'aws-amplify';
 import { loadStripe } from '@stripe/stripe-js';
 
 // Replace with your Stripe public key
-const stripePromise = loadStripe('pk_live_51MfvqQDhepDNpjvlkGXy2CHrtwAt7sox7g3KfZgod8Yix0EnUl8yr0GDCiguHNUZXSqFhdFRA2uuxq05rcJDfhKV00I8Nt9TrZ');
+const stripePromise = loadStripe(process.env.STRIPE_PUBLIC_KEY);
 
 const CheckoutButton = () => {
-  const handleClick = async () => {
+  const handleClick = async (event) => {
+    // Prevent the default action to ensure the page doesn't navigate on button click
+    event.preventDefault();
+    
     // Get Stripe.js instance
     const stripe = await stripePromise;
 
     try {
-      // Call your Amplify backend to create the Checkout session
-      const session = await API.post('stripecheckoutapi', '/stripecheckout', {
-        body: {}, // any required body content
+      // Call your backend to create the Checkout session
+      const response = await fetch('https://plankton-app-3pnzq.ondigitalocean.app/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        // Include any body content or parameters if needed
+        body: JSON.stringify({
+          // Your checkout session parameters here, if any
+        }),
       });
 
-      // Use Stripe's 'redirectToCheckout' method to redirect to Stripe's Checkout page
-      const result = await stripe.redirectToCheckout({
-        sessionId: session.sessionId,
-      });
+      const session = await response.json();
 
-      if (result.error) {
-        // If there's an error, display it to the customer
-        console.error(result.error.message);
+      if (response.ok) {
+        // Use Stripe's 'redirectToCheckout' method to redirect to Stripe's Checkout page
+        const result = await stripe.redirectToCheckout({
+          sessionId: session.id,
+        });
+
+        if (result.error) {
+          // If there's an error, display it to the customer
+          console.error(result.error.message);
+        }
+      } else {
+        // Handle errors from your backend
+        console.error(session.message);
       }
     } catch (error) {
       console.error("Error creating checkout session", error);
