@@ -6,7 +6,7 @@ const stripePromise = loadStripe(process.env.STRIPE_PUBLIC_KEY);
 
 const CheckoutButton = () => {
   const handleClick = async (event) => {
-    // Prevent the default action to ensure the page doesn't navigate on button click
+   
     event.preventDefault();
     
     // Get Stripe.js instance
