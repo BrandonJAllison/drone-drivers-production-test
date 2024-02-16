@@ -19,7 +19,7 @@ const Profile = ({ user, signout }) => {
       {user && (
         <>
           <div className="section info-card">
-            <h1>My Information</h1>
+            <h1>User Information</h1>
            
             <ul>
               <li>
