@@ -27,7 +27,7 @@ const Profile = ({ user, signout }) => {
 
     // Function to initiate checkout directly with your backend for Stripe Checkout
     async function initiateCheckout() {
-        const response = await fetch('https://plankton-app-3pnzq.ondigitalocean.app/api/stripe/create-checkout-session', {
+        const response = await fetch('https://plankton-app-3pnzq.ondigitalocean.app/api/create-checkout-session', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
