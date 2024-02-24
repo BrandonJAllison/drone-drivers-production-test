@@ -47,7 +47,7 @@ const CheckoutButton = () => {
   };
 
   return (
-    <button onClick={handleClick}>Checkout</button>
+    <button onClick={handleClick}>Purchase Course</button>
   );
 };
 

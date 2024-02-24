@@ -1,64 +1,65 @@
 import React, { useState } from 'react';
-import './Quiz.css';
+import { Typography, Radio, RadioGroup, FormControlLabel, Button, Box, Paper } from '@mui/material';
 
 const Quiz = ({ quizData, onCompletion }) => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [selectedAnswer, setSelectedAnswer] = useState('');
     const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
     const [showResults, setShowResults] = useState(false);
 
-    const handleAnswerSelect = (index) => {
-        setSelectedAnswer(index);
+    const handleAnswerChange = (event) => {
+        setSelectedAnswer(event.target.value);
     };
 
     const handleSubmit = () => {
-        if (selectedAnswer === quizData[currentQuestionIndex].answer) {
+        if (parseInt(selectedAnswer, 10) === quizData[currentQuestionIndex].answer) {
             setCorrectAnswersCount(prevCount => prevCount + 1);
         }
         if (currentQuestionIndex + 1 < quizData.length) {
-            setSelectedAnswer(null);  // Reset selected answer for the next question.
+            setSelectedAnswer(''); // Reset selected answer for the next question
             setCurrentQuestionIndex(prevIndex => prevIndex + 1);
         } else {
             setShowResults(true);
-            onCompletion && onCompletion();
+            if(onCompletion) onCompletion(correctAnswersCount, quizData.length);
         }
     };
 
     const resetQuiz = () => {
         setCurrentQuestionIndex(0);
-        setSelectedAnswer(null);
+        setSelectedAnswer('');
         setCorrectAnswersCount(0);
         setShowResults(false);
     };
 
     if (showResults) {
         return (
-            <div className="quizResults">
-                <h3>You answered {correctAnswersCount} out of {quizData.length} questions correctly!</h3>
-                <button onClick={resetQuiz}>Try Again</button>
-            </div>
+            <Paper elevation={3} sx={{ p: 2 }}>
+                <Typography variant="h5" gutterBottom>
+                    You answered {correctAnswersCount} out of {quizData.length} questions correctly!
+                </Typography>
+                <Button variant="contained" color="primary" onClick={resetQuiz}>
+                    Try Again
+                </Button>
+            </Paper>
         );
     }
 
     return (
-        <div className="quizContainer">
-            <h3 className="questionTitle">{quizData[currentQuestionIndex].question}</h3>
-            <div>
+        <Paper elevation={3} sx={{ p: 2 }}>
+            <Typography variant="h6" gutterBottom>
+                {quizData[currentQuestionIndex].question}
+            </Typography>
+            <RadioGroup name="quiz-options" value={selectedAnswer} onChange={handleAnswerChange}>
                 {quizData[currentQuestionIndex].options.map((option, index) => (
-                    <div key={index} className="radioOption">
-                        <input
-                            type="radio"
-                            id={`option${index}`}
-                            value={index}
-                            checked={selectedAnswer === index}
-                            onChange={() => handleAnswerSelect(index)}
-                        />
-                        <label style={{marginTop:'10px'}} htmlFor={`option${index}`}>{option}</label>
-                    </div>
+                    <FormControlLabel key={index} value={index.toString()} control={<Radio />} label={option} />
                 ))}
-            </div>
-            <button onClick={handleSubmit}>Next</button>
-        </div>
+            </RadioGroup>
+            <Box sx={{ mt: 2 }}>
+                <Button variant="contained" color="primary" onClick={handleSubmit}>
+                    Next
+                </Button>
+            </Box>
+        </Paper>
     );
 };
 

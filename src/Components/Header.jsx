@@ -1,73 +1,77 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './Header.css';
-import Logo from './logo-txt-sm.png';
-import { Amplify, Auth } from 'aws-amplify';
-import awsconfig from '../aws-exports';
+import { useNavigate } from 'react-router-dom';
+import { AppBar, Toolbar, IconButton, Menu, MenuItem, Typography, Button, Box } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import LockIcon from '@mui/icons-material/Lock';
+import Logo from './logo-txt-sm.png'; // Ensure this path is correct
+import { Amplify } from 'aws-amplify';
+import awsconfig from '../aws-exports'; // Ensure this path is correct
+
 Amplify.configure(awsconfig);
 
 const Header = ({ signOut, user }) => {
   const navigate = useNavigate();
+  const [anchorEl, setAnchorEl] = useState(null);
   const [showLockMessage, setShowLockMessage] = useState(false);
   const hasPaid = user?.hasPaidForFAAPart107;
 
-  const handleMenuClick = (path, locked) => {
+  const handleMenuClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleNavigation = (path, locked) => {
     if (locked) {
       setShowLockMessage(true);
     } else {
       setShowLockMessage(false);
       navigate(path);
     }
+    handleClose();
   };
 
   return (
-    <header className="header">
-      <input type="checkbox" id="toggle" style={{ display: "none" }} />
-      <div className="header__left">
-        <img src={Logo} alt="logo" className="logo1" />
-      </div>
-      <label htmlFor="toggle" className="header__toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-      <div className="header__right">
-        <div className="header__dropdown">
-          <Link to="#" className="header__link header__dropdown__toggle">
-            My Drone Driver
-          </Link>
-          <div className="header__dropdown__menu">
-            <Link to="/" className="header__dropdown__item">
-              Profile
-            </Link>
-            <Link 
-              to="#" 
-              className="header__dropdown__item" 
-              onClick={() => handleMenuClick('/course', !hasPaid)}
-            >
-              Course { !hasPaid && <span className="lock-icon">🔒</span> }
-            </Link>
-            <Link 
-              to="#" 
-              className="header__dropdown__item" 
-              onClick={() => handleMenuClick('/test-landing', !hasPaid)}
-            >
-              Testing { !hasPaid && <span className="lock-icon">🔒</span> }
-            </Link>
-            <Link to="/resources" className="header__dropdown__item">
-              Resources
-            </Link>
-            <button className="header__dropdown__button" onClick={signOut}>Logout</button>
-          </div>
-        </div>
-      </div>
-
+    <AppBar position="static" color="default" elevation={4} sx={{ backgroundColor: '#fff', boxShadow: '0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)' }}>
+      <Toolbar>
+        <IconButton
+          size="large"
+          edge="start"
+          sx={{ color: '#000', ml: 2 }} // Adjusted for margin left
+          onClick={handleMenuClick}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+          <img src={Logo} alt="logo" style={{ height: '30px' }} />
+        </Box>
+        <Button color="inherit" sx={{ color: '#000', mr: 2 }} // Adjusted for margin right
+                onClick={signOut}>Logout</Button>
+      </Toolbar>
+      <Menu
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={() => navigate('/')}>Profile</MenuItem>
+        <MenuItem onClick={() => handleNavigation('/course', !hasPaid)}>
+          Course { !hasPaid && <LockIcon fontSize="small" /> }
+        </MenuItem>
+        <MenuItem onClick={() => handleNavigation('/test-landing', !hasPaid)}>
+          Testing { !hasPaid && <LockIcon fontSize="small" /> }
+        </MenuItem>
+        <MenuItem onClick={() => navigate('/resources')}>Resources</MenuItem>
+      </Menu>
       {showLockMessage && (
-        <div className="lock-message">
-          Locked: Please purchase course to unlock
-        </div>
+        <Typography color="error" sx={{ textAlign: 'center' }}>
+          Locked: Please purchase the course to unlock
+        </Typography>
       )}
-    </header>
+    </AppBar>
   );
 };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import "./Profile.css";
+import { Box, Card, CardContent, Typography, CardMedia, Grid, List, ListItem, ListItemText } from '@mui/material';
+import LockIcon from '@mui/icons-material/Lock';
 import CheckoutButton from '../checkoutbutton.jsx';
 
 const Profile = ({ user, signout }) => {
@@ -45,44 +46,85 @@ const Profile = ({ user, signout }) => {
     }
 
     return (
-        <div className="profile-container">
+        <Box sx={{ flexGrow: 1, p: 3 }}>
             {user && (
                 <>
-                    <div className="section info-card">
-                        <h1>User Information</h1>
-                        <ul>
-                            <li><span className="info-label">Name:  </span>{user.attributes.name}</li>
-                            <li><span className="info-label">Username:</span> {user.attributes.preferred_username}</li>
-                            <li><span className="info-label">Email:</span> {user.attributes.email}</li>
-                        </ul>
-                    </div>
+                    <Grid container spacing={2}>
+                        {/* User Information */}
+                        <Grid item xs={12}>
+                            <Card raised>
+                                <CardContent>
+                                    <Typography variant="h5" component="div">User Information</Typography>
+                                    <List dense>
+                                        <ListItem><ListItemText primary="Name" secondary={user.attributes.name} /></ListItem>
+                                        <ListItem><ListItemText primary="Username" secondary={user.attributes.preferred_username} /></ListItem>
+                                        <ListItem><ListItemText primary="Email" secondary={user.attributes.email} /></ListItem>
+                                    </List>
+                                </CardContent>
+                            </Card>
+                        </Grid>
 
-                    <div className="section">
-                        <h1>Courses</h1>
-                        <div className="course">
-                            <img 
-                                src="https://dronedriver.com/wp-content/uploads/2023/11/part-107-card.png"
-                                alt="FAA Part 107 Training Course"
-                                className={`course-image ${!hasPaid ? 'locked-image' : ''}`}
-                            />
-                            {!hasPaid && (
-                                <div className="locked-course">
-                                    <span className="lock-icon">🔒</span>
-                                    <CheckoutButton onClick={handlePurchaseClick} />
-                                </div>
-                            )}
-                        </div>
-                    </div>
+                        {/* Courses */}
+                        <Grid item xs={12}>
+                            <Card raised>
+                                <CardContent>
+                                    <Typography variant="h5" component="div">
+                                        Courses
+                                    </Typography>
+                                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pt: 2 }}>
+                                        <Box sx={{ position: 'relative', display: 'inline-block' }}>
+                                            <CardMedia
+                                                component="img"
+                                                sx={{ width: 151, filter: !hasPaid ? 'grayscale(100%)' : 'none' }}
+                                                image="https://dronedriver.com/wp-content/uploads/2023/11/part-107-card.png"
+                                                alt="FAA Part 107 Training Course"
+                                            />
+                                            {!hasPaid && (
+                                                <LockIcon 
+                                                    color="error" 
+                                                    sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} 
+                                                />
+                                            )}
+                                        </Box>
+                                        {!hasPaid && (
+                                            <Box sx={{ mt: 1 }}>
+                                                <CheckoutButton onClick={handlePurchaseClick} />
+                                            </Box>
+                                        )}
+                                    </Box>
+                                </CardContent>
+                            </Card>
+                        </Grid>
 
-                    <div className="section">
-                        <h1>Test Scores</h1>
-                        <div className="scores">
-                            <h4>You Have No Test Scores To Display</h4>
-                        </div>
-                    </div>
+                        {/* Test Scores */}
+                        <Grid item xs={12}>
+                            <Card raised>
+                                <CardContent>
+                                    <Typography variant="h5" component="div">Test Scores</Typography>
+                                    <Typography variant="body2">You Have No Test Scores To Display</Typography>
+                                </CardContent>
+                            </Card>
+                        </Grid>
+
+                        {/* Invoices */}
+                        <Grid item xs={12}>
+                            <Card raised sx={{ mb: 2 }}>
+                                <CardContent>
+                                    <Typography variant="h5" component="div">Invoices</Typography>
+                                    {hasPaid ? (
+                                        <Typography variant="body1" component="p">You do not have any outstanding invoices.</Typography>
+                                    ) : (
+                                        <Box sx={{ mt: 2 }}>
+                                            <Typography variant="body2" component="p" color="textSecondary">You have no invoices.</Typography>
+                                        </Box>
+                                    )}
+                                </CardContent>
+                            </Card>
+                        </Grid>
+                    </Grid>
                 </>
             )}
-        </div>
+        </Box>
     );
 }
 

@@ -7,7 +7,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Course from './Components/Course';
-import Dashboard from './Components/Dashboard';
+import Success from './Components/Success';
 import Profile from './Components/Profile';
 import Test from './Testing';
 import Privacy from './PrivacyPolicy';
@@ -49,13 +49,12 @@ const App = ({ signOut, user }) => {
             {/* <Route path="/" element={<Home/>} /> */}
             {/* <Route path="/register" element={<Register />} /> */}
             {/* <Route path="/login" element={<Login user={user} />} /> */}
-            <Route path="/dashboard" element={<Dashboard  />} />
+            <Route path="/success" element={<Success />} />
             <Route path="/course" element={<Course />} />
             <Route path="/" element={<Profile user={user} />} />
             <Route path="/practice-test" element={<Test />} />
             <Route path="/privacy-policy" element={<Privacy />} />
             {/* <Route path="/checkout" element={<CheckoutPage />} /> */}
-            <Route path="/success" element={<SuccessPage />} />
             <Route path="/test-landing" element={<TestLanding />} />
             <Route path="/resources" element={<ResourcesPage />} />
           </Routes>
