@@ -1,269 +1,151 @@
-import React, { useState, useEffect } from "react";
-import questionsData from "./testquestions.json";
-import "./TestComponent.css";
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
-
-
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
-
-// const applyStylesToResultContent = () => {
-//   const resultDiv = document.getElementById("result-container");
-  
-//   // Add padding and background color
-//   resultDiv.style.padding = "20px";
-//   resultDiv.style.backgroundColor = "#ffffff";
-  
-//   // Style the individual question containers
-//   const questionContainers = resultDiv.querySelectorAll(".result-question");
-//   questionContainers.forEach((questionContainer) => {
-//     questionContainer.style.padding = "10px";
-//     questionContainer.style.marginBottom = "20px";
-//     questionContainer.style.border = "1px solid #cccccc";
-//     questionContainer.style.borderRadius = "5px";
-//   });
-
-//   // Add any other desired styles here
-// };
-
-const generatePDF = async () => {
-  const resultDiv = document.querySelector(".result-container");
-
-  const canvas = await html2canvas(resultDiv);
-  const imgData = canvas.toDataURL("image/png");
-
-  const pdf = new jsPDF("p", "mm", "a4");
-  const imgProps = pdf.getImageProperties(imgData);
-  const pdfWidth = pdf.internal.pageSize.getWidth();
-  const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-  pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
-  
-  // Open PDF in a new tab
-  const pdfBlob = pdf.output("blob");
-  const pdfURL = URL.createObjectURL(pdfBlob);
-  window.open(pdfURL, "_blank");
-};
-
-
+import React, { useState, useEffect } from 'react';
+import { Box, Button, CircularProgress, FormControlLabel, Radio, RadioGroup, Typography, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Container, Chip, Link } from '@mui/material';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+import questionsData from './testquestions.json'; // Ensure this path is correct
 
 const TestComponent = () => {
-  const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedOptions, setSelectedOptions] = useState(Array(60).fill(""));
-  const [score, setScore] = useState({ correct: 0, incorrect: 0 });
+  const [selectedOptions, setSelectedOptions] = useState({});
   const [showResults, setShowResults] = useState(false);
-  const [startTime, setStartTime] = useState(null);
-  const [endTime, setEndTime] = useState(null);
+  const [score, setScore] = useState({ correct: 0, incorrect: 0 });
   const [timer, setTimer] = useState(2 * 60 * 60); // 2 hours in seconds
+  const [showNumbers, setShowNumbers] = useState(false);
 
   useEffect(() => {
-    const shuffledQuestions = [...questionsData];
-    shuffleArray(shuffledQuestions);
-    setQuestions(shuffledQuestions.slice(0, 60));
-    setSelectedOptions(new Array(30).fill(""));
-    setStartTime(new Date());
-  }, []);
+    const interval = setInterval(() => {
+      setTimer(prevTimer => prevTimer - 1);
+    }, 1000);
 
-  useEffect(() => {
-    if (timer > 0 && !showResults) {
-      const countdown = setInterval(() => {
-        setTimer((prevTimer) => prevTimer - 1);
-      }, 1000);
-      return () => clearInterval(countdown);
-    } else if (timer === 0) {
-      handleSubmit();
+    if (timer === 0) {
+      clearInterval(interval);
+      handleCalculateScore();
     }
-  }, [timer, showResults]);
 
-  useEffect(() => {
-    if (showResults) {
-      generatePDF();
-    }
-  }, [showResults]);
+    return () => clearInterval(interval);
+  }, [timer]);
 
-  const formatTime = (seconds) => {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = seconds % 60;
-    return `${hours}:${minutes
-      .toString()
-      .padStart(2, "0")}:${remainingSeconds.toString().padStart(2, "0")}`;
+  const formatTime = () => {
+    const hours = Math.floor(timer / 3600);
+    const minutes = Math.floor((timer % 3600) / 60);
+    const seconds = timer % 60;
+    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   };
-
-  // Other helper functions (handleOptionChange, handleNext, handleBack, handleQuestionClick, handleSubmit)
-
-  const question = questions[currentQuestion];
-
 
   const handleOptionChange = (event) => {
-    const target = event.target;
-    const updatedOptions = [...selectedOptions];
-    const selectedIndex = parseInt(target.value);
-    updatedOptions[currentQuestion] = selectedIndex;
-    setSelectedOptions(updatedOptions);
-  
-    const question = questions[currentQuestion];
-    const parentElement = target.closest(".options-container");
-    const optionElements = parentElement.querySelectorAll(".option");
-  
-    optionElements.forEach((option, index) => {
-      if (option.contains(target)) {
-        option.classList.remove("unanswered");
-        option.classList.add("answered");
-      } else {
-        option.classList.remove("answered");
-      }
+    setSelectedOptions({ ...selectedOptions, [currentQuestion]: event.target.value });
+  };
+
+  const handleNextQuestion = () => {
+    if (currentQuestion < 59) { // Ensure it doesn't go beyond 60 questions
+      setCurrentQuestion(currentQuestion + 1);
+    }
+  };
+
+  const handlePreviousQuestion = () => {
+    if (currentQuestion > 0) {
+      setCurrentQuestion(currentQuestion - 1);
+    }
+  };
+
+  const handleCalculateScore = () => {
+    let correctCount = Object.keys(selectedOptions).reduce((acc, key) => {
+      const questionIndex = parseInt(key, 10);
+      const isCorrect = questionsData[questionIndex].correct_answer === selectedOptions[key];
+      return acc + (isCorrect ? 1 : 0);
+    }, 0);
+
+    setScore({
+      correct: correctCount,
+      incorrect: 60 - correctCount // Assuming always 60 questions, adjust based on actual count
     });
-  };
-  
 
-  const handleNext = () => {
-    setCurrentQuestion(currentQuestion + 1);
-  };
-
-  const handleBack = () => {
-    setCurrentQuestion(currentQuestion - 1);
-  };
-
-  const handleQuestionClick = (index) => {
-    setCurrentQuestion(index);
-  };
-
-  const handleSubmit = () => {
-    // Save results
-    const correct = questions.reduce(
-      (total, question, index) =>
-      parseInt(selectedOptions[index]) === question.correctAnswerIndex
-          ? total + 1
-          : total,
-      0
-    );
-    setScore({ correct, incorrect: questions.length - correct });
     setShowResults(true);
-    setEndTime(new Date());
- 
+  };
+
+  const generatePDF = async () => {
+    const element = document.getElementById('result-container');
+    const canvas = await html2canvas(element);
+    const imgData = canvas.toDataURL('image/png');
+    const pdf = new jsPDF();
+    pdf.addImage(imgData, 'PNG', 0, 0);
+    pdf.save('quiz-results.pdf');
   };
 
   if (showResults) {
-    const timeTaken = Math.round((endTime - startTime) / 1000);
-  
     return (
-      <div className="quiz-container">
-        <div className="result-container" id="result-container">
-          <h2>Results</h2>
-          <p>Correct: {score.correct}</p>
-          <p>Incorrect: {score.incorrect}</p>
-          <p>Time taken: {timeTaken} seconds</p>
-          <div>
-            {questions.map((q, index) => (
-              <div key={index} className="result-question">
-                <p>
-                  {index + 1}. {q.question}
-                </p>
-                <div className="result-options">
-                  {q.answers.map((answer, i) => {
-                    let optionStyle = "";
-                    if (answer === q.answers[q.correctAnswerIndex]) {
-                      optionStyle = "correct-answer";
-                    } else if (
-                      answer === q.answers[selectedOptions[index]] &&
-                      answer !== q.answers[q.correctAnswerIndex]
-                    ) {
-                      optionStyle = "wrong-answer";
-                    }
-                    return (
-                      <div key={i} className={`option ${optionStyle}`}>
-                        <span className="option-text">{answer}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <Dialog open={showResults} onClose={() => setShowResults(false)}>
+        <DialogTitle>Quiz Results</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            You scored {score.correct} out of 60.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setShowResults(false)}>Close</Button>
+          <Button onClick={generatePDF}>Download Results</Button>
+        </DialogActions>
+      </Dialog>
     );
   }
-  
-  if (questions.length === 0) {
-    return <p>Loading...</p>;
-  }
-  
-return (
-  <div className="quiz-container">
-    <div className="timer-container">
-      <p>Time remaining: {formatTime(timer)}</p>
-    </div>
-    <div className="question-list">
-  {questions.map((_, index) => (
-    <button
-      key={index}
-      className={`question-number ${
-        selectedOptions[index] !== "" ? "answered" : ""
-      } ${
-        currentQuestion === index ? "current-question" : ""
-      }`}
-      onClick={() => handleQuestionClick(index)}
-    >
-      <span
-        className={`question-number-text ${
-          selectedOptions[index] !== "" ? "answered" : ""
-        }`}
-      >
-        {index + 1}
-      </span>
-    </button>
-  ))}
-</div>
-    <div className="question-container">
-      <h2>{question.question}</h2>
-      {question.link && (
-        <p>
-          <a href={question.link} target="_blank" rel="noreferrer" className="open_link">
-            Open Chart 
-          </a>
-        </p>
+
+  return (
+    <Container>
+      <Typography variant="h4" gutterBottom>
+        Quiz Time
+      </Typography>
+      <Typography variant="h6">
+        Time Remaining: {formatTime()}
+      </Typography>
+      <Box sx={{ my: 2 }}>
+        <Button variant="contained" onClick={() => setShowNumbers(!showNumbers)}>
+          {showNumbers ? 'Hide Question Numbers' : 'Show Question Numbers'}
+        </Button>
+      </Box>
+      {showNumbers && (
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 1, my: 2 }}>
+          {questionsData.slice(0, 60).map((_, index) => (
+            <Chip
+              label={index + 1}
+              color={selectedOptions[index] ? 'primary' : 'default'}
+              onClick={() => setCurrentQuestion(index)}
+              key={index}
+            />
+          ))}
+        </Box>
       )}
-      <div className="options-container">
-      {question.answers.map((answer, index) => (
-  <div key={index} className="option">
-    <label>
-      <input
-        type="radio"
-        value={index}
-        checked={selectedOptions[currentQuestion] === index}
-        onChange={handleOptionChange}
-      />
-      <span className="option-text">{answer}</span>
-    </label>
-  </div>
-))}
-      </div>
-      <div className="button-container">
-        {currentQuestion > 0 && (
-          <button className="nav-button" onClick={handleBack}>
-            Back
-          </button>
+      <Box sx={{ my: 4 }}>
+        <Typography variant="h5">{questionsData[currentQuestion].question}</Typography>
+        {questionsData[currentQuestion].question_link && (
+          <Typography sx={{ mt: 2 }}>
+            <Link href={questionsData[currentQuestion].question_link} target="_blank" rel="noopener noreferrer">
+              View Chart
+            </Link>
+          </Typography>
         )}
-        {currentQuestion < questions.length - 1 ? (
-          <button className="nav-button" onClick={handleNext}>
+        <RadioGroup value={selectedOptions[currentQuestion] || ''} onChange={handleOptionChange}>
+          {questionsData[currentQuestion].answers.map((answer, index) => (
+            <FormControlLabel key={index} value={answer} control={<Radio />} label={answer} />
+          ))}
+        </RadioGroup>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2 }}>
+          <Button onClick={handlePreviousQuestion} disabled={currentQuestion === 0}>
+            Previous
+          </Button>
+          <Button onClick={handleNextQuestion} disabled={currentQuestion === 59}>
             Next
-          </button>
-        ) : (
-          <button className="nav-button" onClick={handleSubmit}>
-            Submit
-          </button>
+          </Button>
+        </Box>
+        {currentQuestion === 59 && (
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+            <Button variant="contained" color="primary" onClick={handleCalculateScore}>
+              Submit
+            </Button>
+          </Box>
         )}
-      </div>
-    </div>
-  </div>
-);
-        }
+      </Box>
+    </Container>
+  );
+};
+
 export default TestComponent;
