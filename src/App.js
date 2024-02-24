@@ -26,47 +26,38 @@ import '@aws-amplify/ui-react/styles.css';
 import './CustomAuthStyles.css'; 
 Amplify.configure(awsExports);
 
+Amplify.configure(awsExports);
 
-const stripePromise = loadStripe('pk_test_51MfvqQDhepDNpjvlblpLJD3CDsz8alCnx1RIMlh0ZKh7eh0F2clKaGZmz5cOd6IFahiD8XZCObKUQy1qZWRf2pbA00ur8VklUb');
-
-const MyCustomHeader = () => (
-  <div style={{ backgroundColor: 'red', padding: '20px' }}>
-    <p>Header Test</p>
-  </div>
-);
+const stripePromise = loadStripe('your_stripe_public_key_here');
 
 const App = ({ signOut, user }) => {
- 
-  console.log(user.username);
-
-
   return (
     <BrowserRouter>
-      <UserProvider value={{user}}>
-        <Header user={user} signOut={signOut}/>
-        <Elements stripe={stripePromise}>
-          <Routes>
-            {/* <Route path="/" element={<Home/>} /> */}
-            {/* <Route path="/register" element={<Register />} /> */}
-            {/* <Route path="/login" element={<Login user={user} />} /> */}
-            <Route path="/success" element={<Success />} />
-            <Route path="/course" element={<Course />} />
-            <Route path="/" element={<Profile user={user} />} />
-            <Route path="/practice-test" element={<Test />} />
-            <Route path="/privacy-policy" element={<Privacy />} />
-            {/* <Route path="/checkout" element={<CheckoutPage />} /> */}
-            <Route path="/test-landing" element={<TestLanding />} />
-            <Route path="/resources" element={<ResourcesPage />} />
-          </Routes>
-        </Elements>
-        <Footer />
+      <UserProvider value={{ user }}>
+        <div className="app-container">
+          <Header user={user} signOut={signOut} />
+          <div className="main-content">
+            <Elements stripe={stripePromise}>
+              <Routes>
+                <Route path="/success" element={<Success />} />
+                <Route path="/course" element={<Course />} />
+                <Route path="/" element={<Profile user={user} />} />
+                <Route path="/practice-test" element={<Test />} />
+                <Route path="/privacy-policy" element={<Privacy />} />
+                <Route path="/test-landing" element={<TestLanding />} />
+                <Route path="/resources" element={<ResourcesPage />} />
+                {/* Add more routes as needed */}
+              </Routes>
+            </Elements>
+          </div>
+          <Footer />
+        </div>
       </UserProvider>
     </BrowserRouter>
   );
 };
-
 export default withAuthenticator(App, {
   includeGreetings: true,
-  authenticatorComponents: [MyCustomHeader],
+ 
   // other configuration...
 });

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 import courseData from './courseData.json';
 import Quiz from './Quiz';
-import { Button, Drawer, List, ListItem, ListItemText, Typography, Box, IconButton, Collapse } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+import { Button, Drawer, List, ListItem, ListItemText, Typography, Box, IconButton, Collapse, useTheme, useMediaQuery } from '@mui/material';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 
@@ -13,6 +13,9 @@ const Course = () => {
     const [showQuiz, setShowQuiz] = useState(false);
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [openChapters, setOpenChapters] = useState(Array(courseData.chapters.length).fill(false));
+    
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     const handleClickDrawerButton = () => {
         setIsDrawerOpen(!isDrawerOpen);
@@ -33,11 +36,10 @@ const Course = () => {
 
     return (
         <>
-            <Box sx={{ position: 'absolute', top: '150px', right: 0, m: 2 }}>
-                <IconButton onClick={handleClickDrawerButton} color="inherit">
-                    <MenuIcon />
-                    <Typography variant="body1" sx={{ ml: 1 }}>Open Course Menu</Typography>
-                </IconButton>
+            <Box sx={{ position: 'fixed', top: '75px', left: '20px', zIndex: 1000 }}> {/* Changed to fixed positioning */}
+                <Button onClick={handleClickDrawerButton} color="inherit" variant="outlined" startIcon={<ArrowForwardIosIcon />}>
+                    <Typography variant="body1">Chapters</Typography>
+                </Button>
             </Box>
             <Drawer anchor="left" open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
                 <List>
@@ -60,7 +62,7 @@ const Course = () => {
                     ))}
                 </List>
             </Drawer>
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+            <Box component="main" sx={{ flexGrow: 1, p: 3, pt: isMobile ? '100px' : '24px' }}>
                 <Box sx={{ maxWidth: '80%', margin: 'auto' }}>
                     <ReactPlayer
                         url={courseData.chapters[currentChapter].subChapters[currentSubChapter].videoUrl}
