@@ -13,7 +13,7 @@ export const CourseAccessProvider = ({ user, children }) => {
 
         const fetchUserPaymentStatus = async () => {
             try {
-                const response = await fetch(`/api/user/${user.username}/hasPaid`);
+                const response = await fetch(`https://plankton-app-3pnzq.ondigitalocean.app/api/create-checkout-session/api/user/${user.username}/hasPaid`);
                 const data = await response.json();
 
                 setHasPaid(data.hasPaid);
