@@ -7,24 +7,22 @@ const CourseAccessContext = createContext();
 export const CourseAccessProvider = ({ user, children }) => {
     const [hasPaid, setHasPaid] = useState(false);
 
-    useEffect(() => {
-        // Placeholder for the actual user ID retrieval logic
-        const userId = 'currentUserId';
-        console.log('Sending user id', userId)
+  useEffect(() => {
+    const fetchUserPaymentStatus = async () => {
+        try {
+            const response = await fetch(`https://plankton-app-3pnzq.ondigitalocean.app/api/user/${user.username}`);
+            const data = await response.json();
+            console.log('has paid', data.hasPaid); // Adjusted to match the backend property name
+            setHasPaid(data.hasPaid);
+        } catch (error) {
+            console.error("Error fetching user payment status:", error);
+        }
+    };
 
-        const fetchUserPaymentStatus = async () => {
-            try {
-                const response = await fetch(`https://plankton-app-3pnzq.ondigitalocean.app/api/user/${user.username}`);
-                const data = await response.json();
-                console.log('has paid',data.data.has_paid)
-                setHasPaid(data.has_paid);
-            } catch (error) {
-                console.error("Error fetching user payment status:", error);
-            }
-        };
-
+    if (user.username) { // Also make sure this condition is correct for fetching
         fetchUserPaymentStatus();
-    }, []);
+    }
+}, [user.username]);
 
     return (
         <CourseAccessContext.Provider value={{ hasPaid }}>
