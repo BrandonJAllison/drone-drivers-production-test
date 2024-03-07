@@ -6,6 +6,7 @@ import LockIcon from '@mui/icons-material/Lock';
 import Logo from './logo-txt-sm.png'; // Ensure this path is correct
 import { Amplify } from 'aws-amplify';
 import awsconfig from '../aws-exports'; // Ensure this path is correct
+import { useCourseAccess } from '../CourseAccessContext.js';
 
 Amplify.configure(awsconfig);
 
@@ -13,7 +14,8 @@ const Header = ({ signOut, user }) => {
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
   const [showLockMessage, setShowLockMessage] = useState(false);
-  const hasPaid = user?.hasPaidForFAAPart107;
+  const { hasPaid } = useCourseAccess();
+  
 
   const handleMenuClick = (event) => {
     setAnchorEl(event.currentTarget);

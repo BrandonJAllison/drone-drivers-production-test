@@ -10,10 +10,11 @@ export const CourseAccessProvider = ({ user, children }) => {
     useEffect(() => {
         // Placeholder for the actual user ID retrieval logic
         const userId = 'currentUserId';
+        console.log('Sending user id', userId)
 
         const fetchUserPaymentStatus = async () => {
             try {
-                const response = await fetch(`https://plankton-app-3pnzq.ondigitalocean.app/api/user/${user.username}/hasPaid`);
+                const response = await fetch(`https://plankton-app-3pnzq.ondigitalocean.app/api/user/${user.username}`);
                 const data = await response.json();
                 console.log(data)
                 setHasPaid(data.hasPaid);
