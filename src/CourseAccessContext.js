@@ -15,7 +15,7 @@ export const CourseAccessProvider = ({ user, children }) => {
             console.log('has paid', data); // Adjusted to match the backend property name
             setHasPaid(data.has_paid);
         } catch (error) {
-            console.error("Error fetching user payment status at this time:", error);
+            console.error("Error fetching user payment status at this time :", error);
         }
     };
 
