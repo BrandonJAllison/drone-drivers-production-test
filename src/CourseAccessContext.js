@@ -12,8 +12,8 @@ export const CourseAccessProvider = ({ user, children }) => {
         try {
             const response = await fetch(`https://plankton-app-3pnzq.ondigitalocean.app/api/user/${user.username}`);
             const data = await response.json();
-            console.log('has paid', data.hasPaid); // Adjusted to match the backend property name
-            setHasPaid(data.hasPaid);
+            console.log('has paid', data.has_paid); // Adjusted to match the backend property name
+            setHasPaid(data.has_paid);
         } catch (error) {
             console.error("Error fetching user payment status:", error);
         }
