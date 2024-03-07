@@ -7,7 +7,7 @@ import { useCourseAccess } from '../CourseAccessContext.js';
 
 const Profile = ({ user, signout }) => {
     const { hasPaid } = useCourseAccess();
-    console.log('REACT_APP_TEST_VARIABLE', process.env.REACT_APP_TEST_VARIABLE);
+    console.log('userId', user.username);
     const navigate = useNavigate();
     
 
