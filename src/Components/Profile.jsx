@@ -3,12 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { Box, Card, CardContent, Typography, CardMedia, Grid, List, ListItem, ListItemText } from '@mui/material';
 import LockIcon from '@mui/icons-material/Lock';
 import CheckoutButton from '../checkoutbutton.jsx';
+import { useCourseAccess } from '../CourseAccessContext.js';
 
 const Profile = ({ user, signout }) => {
+    const { hasPaid } = useCourseAccess();
     console.log('REACT_APP_TEST_VARIABLE', process.env.REACT_APP_TEST_VARIABLE);
     const navigate = useNavigate();
+    
 
-    const hasPaid = user?.hasPaidForFAAPart107;
 
     // Function to handle the click on the purchase button
     const handlePurchaseClick = async () => {

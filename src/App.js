@@ -24,6 +24,7 @@ import awsExports from "./aws-exports";
 import { Amplify, API, graphqlOperation } from 'aws-amplify'
 import '@aws-amplify/ui-react/styles.css';
 import './CustomAuthStyles.css'; 
+import { CourseAccessProvider } from './CourseAccessContext';
 Amplify.configure(awsExports);
 
 Amplify.configure(awsExports);
@@ -34,6 +35,7 @@ const App = ({ signOut, user }) => {
   return (
     <BrowserRouter>
       <UserProvider value={{ user }}>
+      <CourseAccessProvider user={user} >
         <div className="app-container">
           <Header user={user} signOut={signOut} />
           <div className="main-content">
@@ -52,6 +54,7 @@ const App = ({ signOut, user }) => {
           </div>
           <Footer />
         </div>
+        </CourseAccessProvider>
       </UserProvider>
     </BrowserRouter>
   );
