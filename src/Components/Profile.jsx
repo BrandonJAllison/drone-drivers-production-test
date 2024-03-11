@@ -94,8 +94,9 @@ const Profile = ({ user, signout }) => {
                                                 />
                                             )}
                                         </Box>
-                                        {!hasPaid && (
+                                        {user && !hasPaid && (
                                             <Box sx={{ mt: 1 }}>
+                                                {/* Ensure `onClick` uses an arrow function to correctly capture the current `userID` */}
                                                 <CheckoutButton onClick={() => handlePurchaseClick(userID)} />
                                             </Box>
                                         )}
