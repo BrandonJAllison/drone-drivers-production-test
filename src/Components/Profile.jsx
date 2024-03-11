@@ -11,26 +11,9 @@ const Profile = ({ user, signout }) => {
     const navigate = useNavigate();
     
 
-  
-      
-        try {
-          const response = await fetch('https://plankton-app-3pnzq.ondigitalocean.app/api/test', { // Update the URL to match your server's address and port
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(testPayload),
-          });
-      
-          const responseData = await response.json();
-          console.log('Server response:', responseData);
-        } catch (error) {
-          console.error('Error sending test payload:', error);
-        }
-      }
-
     // Function to handle the click on the purchase button
     const handlePurchaseClick = async (user) => {
+        console.log(user.sub)
         try {
             // Directly initiate checkout without JWT
             const response = await initiateCheckout(user);
