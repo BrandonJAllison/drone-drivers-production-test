@@ -13,7 +13,7 @@ const Profile = ({ user, signout }) => {
 
     // Function to handle the click on the purchase button
     const handlePurchaseClick = async (userID) => {
-        console.log(user.sub)
+        console.log(userID)
         try {
             // Directly initiate checkout without JWT
             const response = await initiateCheckout(userID);
@@ -31,7 +31,7 @@ const Profile = ({ user, signout }) => {
     async function initiateCheckout(userID) {
         
         console.log('Initiating checkout for:', userID); // Logging the username for debugging
-        console.log('Sending payload:', JSON.stringify({ userID: userID }));
+        console.log('Sending payload:', userID);
         
         const response = await fetch('https://plankton-app-3pnzq.ondigitalocean.app/api/create-checkout-session', {
             method: 'POST',
@@ -46,6 +46,7 @@ const Profile = ({ user, signout }) => {
         });
     
         if (!response.ok) {
+
             throw new Error('Network response was not ok');
         }
     
