@@ -96,7 +96,7 @@ const Profile = ({ user, signout }) => {
                                         </Box>
                                         {!hasPaid && (
                                             <Box sx={{ mt: 1 }}>
-                                                <CheckoutButton onClick={handlePurchaseClick(userID)} />
+                                                <CheckoutButton onClick={() => handlePurchaseClick(userID)} />
                                             </Box>
                                         )}
                                     </Box>
