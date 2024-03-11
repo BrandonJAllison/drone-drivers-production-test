@@ -30,7 +30,7 @@ const Profile = ({ user, signout }) => {
     };
 
     async function initiateCheckout(user) {
-        const userID = user?.attributes?.sub;
+        const userID = user.attributes.sub;
         console.log ("user ID showing as:", userID)
         // Use the username as the userID
         
