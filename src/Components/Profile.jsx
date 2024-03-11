@@ -31,6 +31,7 @@ const Profile = ({ user, signout }) => {
             console.error('Error initiating checkout:', error);
         }
     };
+
     async function initiateCheckout(userID) {
         
         console.log('Initiating checkout for:', userID); // Logging the username for debugging
@@ -56,6 +57,7 @@ const Profile = ({ user, signout }) => {
         return await response.json(); // Assuming this returns { url: "stripe_checkout_url" }
     }
 
+
     return (
         <Box sx={{ flexGrow: 1, p: 3 }}>
             {user && (
@@ -65,7 +67,8 @@ const Profile = ({ user, signout }) => {
                         <Grid item xs={12}>
                             <Card raised>
                                 <CardContent>
-                                    <Typography variant="h5" component="div">User Information</Typography>
+                                    <Typography variant="h5" component="div">User Information For:</Typography>
+                                    <p>{userID}</p>
                                     <List dense>
                                         <ListItem><ListItemText primary="Name" secondary={user.attributes.name} /></ListItem>
                                         <ListItem><ListItemText primary="Username" secondary={user.attributes.preferred_username} /></ListItem>
