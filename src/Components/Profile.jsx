@@ -11,10 +11,10 @@ const Profile = ({ user, signout }) => {
     const navigate = useNavigate();
     
 
-    async function sendTestPayload() {
+    async function sendTestPayload(user) {
         const testPayload = {
           test: "This is a test",
-          userID: "12345", // Example userID
+          userID: user.sub, // Example userID
         };
       
         try {
@@ -34,7 +34,7 @@ const Profile = ({ user, signout }) => {
       }
 
     // Function to handle the click on the purchase button
-    const handlePurchaseClick = async (user) => {
+    const handlePurchaseClick = async () => {
         try {
             // Directly initiate checkout without JWT
             const response = await sendTestPayload();
@@ -50,7 +50,7 @@ const Profile = ({ user, signout }) => {
     };
 
     async function initiateCheckout(user) {
-        const userID = user.attributes.sub;
+        const userID = user.sub;
       
         // Use the username as the userID
     
