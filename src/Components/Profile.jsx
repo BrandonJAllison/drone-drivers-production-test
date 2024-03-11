@@ -7,6 +7,7 @@ import { useCourseAccess } from '../CourseAccessContext.js';
 
 const Profile = ({ user, signout }) => {
     const { hasPaid } = useCourseAccess();
+    console.log('user', user && user)
     console.log('userId', user.username);
     const navigate = useNavigate();
     
