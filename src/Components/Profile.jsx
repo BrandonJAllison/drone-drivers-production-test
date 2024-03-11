@@ -30,19 +30,20 @@ const Profile = ({ user, signout }) => {
 
     async function initiateCheckout(user) {
         const userID = user.attributes.sub;
-        console.log ("user ID showing as:", userID)
+      
         // Use the username as the userID
         
     
-        console.log('Initiating checkout for:', userID); // Logging the username for debugging
-    
+        // console.log('Initiating checkout for:', userID); // Logging the username for debugging
+        console.log('Sending payload:', JSON.stringify({ userID: userID }));
         const response = await fetch('https://plankton-app-3pnzq.ondigitalocean.app/api/create-checkout-session', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                userID: "some value" // Sending the userID (which is the username in your case)
+                test: "This is a test",
+                userID: userID, // Include your actual userID for reference
                 
             })
         });
