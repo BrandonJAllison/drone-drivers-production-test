@@ -7,7 +7,7 @@ import { useCourseAccess } from '../CourseAccessContext.js';
 
 const Profile = ({ user, signout }) => {
     const { hasPaid } = useCourseAccess();
-    console.log('user', user && user)
+    console.log('user', user.attributes.sub)
     console.log('userId', user.username);
     const navigate = useNavigate();
     
@@ -30,7 +30,7 @@ const Profile = ({ user, signout }) => {
     };
 
     async function initiateCheckout(user) {
-        const userID = user?.attributes?.username;
+        const userID = user?.attributes?.sub;
         console.log ("user ID showing as:", userID)
         // Use the username as the userID
         
