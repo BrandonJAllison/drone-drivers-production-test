@@ -42,7 +42,7 @@ const Profile = ({ user, signout }) => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                "userID": "value" // Sending the userID (which is the username in your case)
+                userID: "some value" // Sending the userID (which is the username in your case)
                 
             })
         });
