@@ -12,22 +12,25 @@ const Profile = ({ user, signout }) => {
     
 
     // Function to handle the click on the purchase button
-    const handlePurchaseClick = async (userID) => {
-        console.log(userID)
+    const handlePurchaseClick = async () => {
+        if (!user || !user.attributes.sub) {
+            console.error('UserID is not available.');
+            return;
+        }
+        const userID = user.attributes.sub; // Ensuring userID is taken directly within the function
+        console.log('Attempting to initiate checkout for:', userID);
+    
         try {
-            // Directly initiate checkout without JWT
             const response = await initiateCheckout(userID);
             if (response.url) {
-                // Assuming response has a URL to redirect for Stripe Checkout
                 window.location.href = response.url;
             } else {
-                console.error('Failed to initiate checkout.');
+                console.error('Failed to initiate checkout. No URL returned.');
             }
         } catch (error) {
             console.error('Error initiating checkout:', error);
         }
     };
-
     async function initiateCheckout(userID) {
         
         console.log('Initiating checkout for:', userID); // Logging the username for debugging
@@ -97,7 +100,7 @@ const Profile = ({ user, signout }) => {
                                         {user && !hasPaid && (
                                             <Box sx={{ mt: 1 }}>
                                                 {/* Ensure `onClick` uses an arrow function to correctly capture the current `userID` */}
-                                                <CheckoutButton onClick={() => handlePurchaseClick(userID)} />
+                                                <CheckoutButton onClick={handlePurchaseClick} />
                                             </Box>
                                         )}
                                     </Box>
