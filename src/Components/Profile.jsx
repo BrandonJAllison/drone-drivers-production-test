@@ -30,7 +30,7 @@ const Profile = ({ user, signout }) => {
 
     async function initiateCheckout(user) {
         const userID = user.username; // Use the username as the userID
-        const userEmail = user.email; // Assuming the user object also has an email attribute
+        
     
         console.log('Initiating checkout for:', userID); // Logging the username for debugging
     
@@ -41,7 +41,7 @@ const Profile = ({ user, signout }) => {
             },
             body: JSON.stringify({
                 userID: userID, // Sending the userID (which is the username in your case)
-                userEmail: userEmail, // Also send the userEmail if required
+                
             })
         });
     
