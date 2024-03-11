@@ -13,10 +13,10 @@ const Profile = ({ user, signout }) => {
 
 
     // Function to handle the click on the purchase button
-    const handlePurchaseClick = async () => {
+    const handlePurchaseClick = async (user) => {
         try {
             // Directly initiate checkout without JWT
-            const response = await initiateCheckout();
+            const response = await initiateCheckout(user);
             if (response.url) {
                 // Assuming response has a URL to redirect for Stripe Checkout
                 window.location.href = response.url;
