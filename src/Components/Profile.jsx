@@ -7,8 +7,7 @@ import { useCourseAccess } from '../CourseAccessContext.js';
 
 const Profile = ({ user, signout }) => {
     const { hasPaid } = useCourseAccess();
-    console.log('user', user.attributes.sub)
-    console.log('userId', user.username);
+    console.log('user in profile', user.attributes.sub)
     const navigate = useNavigate();
     
 
@@ -43,7 +42,7 @@ const Profile = ({ user, signout }) => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                userID: userID, // Sending the userID (which is the username in your case)
+                "userID": "value" // Sending the userID (which is the username in your case)
                 
             })
         });
