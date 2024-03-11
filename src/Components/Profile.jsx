@@ -11,11 +11,7 @@ const Profile = ({ user, signout }) => {
     const navigate = useNavigate();
     
 
-    async function sendTestPayload(user) {
-        const testPayload = {
-          test: "This is a test",
-          userID: user.sub, // Example userID
-        };
+  
       
         try {
           const response = await fetch('https://plankton-app-3pnzq.ondigitalocean.app/api/test', { // Update the URL to match your server's address and port
@@ -34,10 +30,10 @@ const Profile = ({ user, signout }) => {
       }
 
     // Function to handle the click on the purchase button
-    const handlePurchaseClick = async () => {
+    const handlePurchaseClick = async (user) => {
         try {
             // Directly initiate checkout without JWT
-            const response = await sendTestPayload();
+            const response = await initiateCheckout(user);
             if (response.url) {
                 // Assuming response has a URL to redirect for Stripe Checkout
                 window.location.href = response.url;
@@ -118,7 +114,7 @@ const Profile = ({ user, signout }) => {
                                         </Box>
                                         {!hasPaid && (
                                             <Box sx={{ mt: 1 }}>
-                                                <CheckoutButton onClick={sendTestPayload} />
+                                                <CheckoutButton onClick={handlePurchaseClick(user)} />
                                             </Box>
                                         )}
                                     </Box>
