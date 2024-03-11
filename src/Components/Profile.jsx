@@ -32,6 +32,7 @@ const Profile = ({ user, signout }) => {
     async function initiateCheckout() {
         const userID = user.username; 
         const userEmail = user.email; 
+        console.log(userID, userEmail)
     
         const response = await fetch('https://plankton-app-3pnzq.ondigitalocean.app/api/create-checkout-session', {
             method: 'POST',
