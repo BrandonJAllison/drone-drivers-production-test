@@ -12,34 +12,34 @@ const Profile = ({ user, signout }) => {
     const userID = user.attributes.sub
 
     
-        const sendTestPayload = async () => {
-          // Define the payload you want to sen
-          console.log('Initiating checkout for:', userID);
-          const testPayload = {
-            key: 'value', // Example payload, replace with your actual test payload
-            userID: userID
-          };
+        // const sendTestPayload = async () => {
+        //   // Define the payload you want to sen
+        //   console.log('Initiating checkout for:', userID);
+        //   const testPayload = {
+        //     key: 'value', // Example payload, replace with your actual test payload
+        //     userID: userID
+        //   };
       
-          try {
-            // Make a POST request to your endpoint
-            const response = await fetch('https://plankton-app-3pnzq.ondigitalocean.app/api/test', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(testPayload),
-            });
+        //   try {
+        //     // Make a POST request to your endpoint
+        //     const response = await fetch('https://plankton-app-3pnzq.ondigitalocean.app/api/test', {
+        //       method: 'POST',
+        //       headers: {
+        //         'Content-Type': 'application/json',
+        //       },
+        //       body: JSON.stringify(testPayload),
+        //     });
       
-            // Convert the response to JSON
-            const data = await response.json();
+        //     // Convert the response to JSON
+        //     const data = await response.json();
       
-            // Log the response data
-            console.log(data);
-          } catch (error) {
-            // Handle any errors
-            console.error('Error sending test payload:', error);
-          }
-        };
+        //     // Log the response data
+        //     console.log(data);
+        //   } catch (error) {
+        //     // Handle any errors
+        //     console.error('Error sending test payload:', error);
+        //   }
+        // };
       
     
     
@@ -49,50 +49,50 @@ const Profile = ({ user, signout }) => {
         }
     }, [user]); // Depend on user to re-check when it changes
 
-    const handlePurchaseClick = async () => {
-        if (!user || !user.attributes.sub) {
-            console.error('UserID is not available.');
-            return;
-        }
-        const userID = user.attributes.sub;
-        console.log('Attempting to initiate checkout for:', userID);
+    // const handlePurchaseClick = async () => {
+    //     if (!user || !user.attributes.sub) {
+    //         console.error('UserID is not available.');
+    //         return;
+    //     }
+    //     const userID = user.attributes.sub;
+    //     console.log('Attempting to initiate checkout for:', userID);
     
-        try {
-            const response = await initiateCheckout(userID);
-            if (response.url) {
-                window.location.href = response.url;
-            } else {
-                console.error('Failed to initiate checkout. No URL returned.');
-            }
-        } catch (error) {
-            console.error('Error initiating checkout:', error);
-        }
-    };
+    //     try {
+    //         const response = await initiateCheckout(userID);
+    //         if (response.url) {
+    //             window.location.href = response.url;
+    //         } else {
+    //             console.error('Failed to initiate checkout. No URL returned.');
+    //         }
+    //     } catch (error) {
+    //         console.error('Error initiating checkout:', error);
+    //     }
+    // };
 
-    async function initiateCheckout(userID) {
-        console.log('Initiating checkout for:', userID);
-        const response = await fetch('https://plankton-app-3pnzq.ondigitalocean.app/api/create-checkout-session', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ userID })
-        });
+    // async function initiateCheckout() {
+    //     console.log('Initiating checkout for:', userID);
+    //     const response = await fetch('https://plankton-app-3pnzq.ondigitalocean.app/api/create-checkout-session', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify({ userID })
+    //     });
     
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
+    //     if (!response.ok) {
+    //         throw new Error('Network response was not ok');
+    //     }
     
-        return await response.json();
-    }
+    //     return await response.json();
+    // }
 
-    if (isLoading) {
-        return (
-            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-                <CircularProgress />
-            </Box>
-        );
-    }
+    // if (isLoading) {
+    //     return (
+    //         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+    //             <CircularProgress />
+    //         </Box>
+    //     );
+    // }
 
     return (
         <Box sx={{ flexGrow: 1, p: 3 }}>
@@ -133,7 +133,7 @@ const Profile = ({ user, signout }) => {
                                 </Box>
                                 {!hasPaid && (
                                     <Box sx={{ mt: 1 }}>
-                                        <CheckoutButton onClick={handlePurchaseClick} />
+                                        <CheckoutButton userID={userID} />
 
                                     </Box>
                                 )}
@@ -146,7 +146,7 @@ const Profile = ({ user, signout }) => {
                 <Grid item xs={12}>
                             <Card raised>
                                 <CardContent>
-                                <button onClick={sendTestPayload}>Send Test Payload</button>
+                                
                                     <Typography variant="h5" component="div">Test Scores</Typography>
                                     <Typography variant="body2">You Have No Test Scores To Display</Typography>
                                 </CardContent>

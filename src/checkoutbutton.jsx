@@ -2,12 +2,11 @@ import React from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 
 // Replace with your Stripe public key
-// const stripePromise = loadStripe(process.env.REACT_APP_TEST_VARIABLE);
 const stripePromise = loadStripe(process.env.REACT_APP_TEST_VARIABLE);
 
-const CheckoutButton = () => {
+// Accept userID as a prop
+const CheckoutButton = ({ userID }) => {
   const handleClick = async (event) => {
-   
     event.preventDefault();
     
     // Get Stripe.js instance
@@ -20,26 +19,24 @@ const CheckoutButton = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        // Include any body content or parameters if needed
         body: JSON.stringify({
-          // Your checkout session parameters here, if any
+          // Include userID in the request body
+          userID: userID,
         }),
       });
 
       const session = await response.json();
 
       if (response.ok) {
-        // Use Stripe's 'redirectToCheckout' method to redirect to Stripe's Checkout page
+        // Redirect to Checkout
         const result = await stripe.redirectToCheckout({
           sessionId: session.id,
         });
 
         if (result.error) {
-          // If there's an error, display it to the customer
           console.error(result.error.message);
         }
       } else {
-        // Handle errors from your backend
         console.error(session.message);
       }
     } catch (error) {
