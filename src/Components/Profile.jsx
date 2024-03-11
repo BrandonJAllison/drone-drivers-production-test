@@ -29,7 +29,9 @@ const Profile = ({ user, signout }) => {
     };
 
     async function initiateCheckout(user) {
-        const userID = user.username; // Use the username as the userID
+        const userID = user?.attributes?.username;
+        console.log ("user ID showing as:", userID)
+        // Use the username as the userID
         
     
         console.log('Initiating checkout for:', userID); // Logging the username for debugging
