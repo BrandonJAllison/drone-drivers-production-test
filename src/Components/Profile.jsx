@@ -7,16 +7,16 @@ import { useCourseAccess } from '../CourseAccessContext.js';
 
 const Profile = ({ user, signout }) => {
     const { hasPaid } = useCourseAccess();
-    console.log('user in profile', user.attributes)
+    const userID = user.attributes.sub
     const navigate = useNavigate();
     
 
     // Function to handle the click on the purchase button
-    const handlePurchaseClick = async (user) => {
+    const handlePurchaseClick = async (userID) => {
         console.log(user.sub)
         try {
             // Directly initiate checkout without JWT
-            const response = await initiateCheckout(user);
+            const response = await initiateCheckout(userID);
             if (response.url) {
                 // Assuming response has a URL to redirect for Stripe Checkout
                 window.location.href = response.url;
@@ -28,13 +28,11 @@ const Profile = ({ user, signout }) => {
         }
     };
 
-    async function initiateCheckout(user) {
-        const userID = user.sub;
-      
-        // Use the username as the userID
-    
-        // console.log('Initiating checkout for:', userID); // Logging the username for debugging
+    async function initiateCheckout(userID) {
+        
+        console.log('Initiating checkout for:', userID); // Logging the username for debugging
         console.log('Sending payload:', JSON.stringify({ userID: userID }));
+        
         const response = await fetch('https://plankton-app-3pnzq.ondigitalocean.app/api/create-checkout-session', {
             method: 'POST',
             headers: {
@@ -97,7 +95,7 @@ const Profile = ({ user, signout }) => {
                                         </Box>
                                         {!hasPaid && (
                                             <Box sx={{ mt: 1 }}>
-                                                <CheckoutButton onClick={handlePurchaseClick(user)} />
+                                                <CheckoutButton onClick={handlePurchaseClick(userID)} />
                                             </Box>
                                         )}
                                     </Box>
